@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/app/features/widgets/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/contact_widget.dart';
+import 'package:my_website/app/features/widgets/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio_widget.dart';
@@ -33,7 +34,7 @@ class MainLayout extends StatelessWidget {
               )
             ]),
         child: ListView(
-          children: [
+          children: const [
             NavigatorBar(),
             SizedBox(
               height: 50,
@@ -60,6 +61,7 @@ class MainLayout extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
+            FooterWidget(),
           ],
         ),
       ),

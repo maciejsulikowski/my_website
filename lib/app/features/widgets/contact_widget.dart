@@ -16,18 +16,124 @@ class ContactWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+            width: double.infinity,
+            height: 100,
+            child: Text(
+              'Do you have any questions? Feel free to ask! ',
+              style: GoogleFonts.aBeeZee(
+                  color: Colors.black,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            )),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
               height: 600,
-              width: 600,
-              color: Colors.amber,
+              width: 500,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                  colors: [Color.fromARGB(255, 59, 57, 57), Colors.black],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+              padding: const EdgeInsets.only(left: 20),
+              child: const Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 40,
+                        child: Icon(Icons.phone, color: Colors.black),
+                      ),
+                      SizedBox(width: 20),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Phone',
+                            style: TextStyle(color: Colors.white, fontSize: 24),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            '+48 793-744-201',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 40,
+                        child: Icon(Icons.email, color: Colors.black),
+                      ),
+                      SizedBox(width: 20),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Form',
+                            style: TextStyle(color: Colors.white, fontSize: 24),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'Fill out the form next to ➡️',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 40,
+                        child: Icon(Icons.description, color: Colors.black),
+                      ),
+                      SizedBox(width: 20),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Email',
+                            style: TextStyle(color: Colors.white, fontSize: 24),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            'maciejsulikowski99@gmail.com',
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
             Container(
               height: 600,
-              width: 600,
-              color: Colors.amber,
+              width: 500,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                gradient: const LinearGradient(
+                  colors: [
+                    Color.fromRGBO(0, 0, 0, 1),
+                    Color.fromRGBO(0, 0, 0, 1),
+                  ],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
               child: Column(
                 children: [
                   const Row(
@@ -48,7 +154,7 @@ class ContactWidget extends StatelessWidget {
                       PhoneTextField(),
                     ],
                   ),
-                  MessageTextField(),
+                  const MessageTextField(),
                   Padding(
                     padding: const EdgeInsets.all(10),
                     child: ElevatedButton(

@@ -49,21 +49,6 @@ class AboutAppWidget extends StatelessWidget {
                 )
               ],
             )),
-        const Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            AboutMeWidget(
-                image: 'images/icon.png',
-                text: 'LifeDiary',
-                secondText:
-                    'A great app for writing your own diaries and for planning your workouts along with organizing them. The app has more features such as a day planner, calculating how much water to drink or a to do list.'),
-            AboutMeWidget(
-                image: 'images/quizzz.png',
-                text: 'QuizQuest',
-                secondText:
-                    'An application where you can test your knowledge, develop it in many interesting areas such as science, sports or many others, and have fun on top of that.'),
-          ],
-        ),
         const SizedBox(height: 50),
       ],
     );
