@@ -14,6 +14,7 @@ class AboutAppWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
+            padding: const EdgeInsets.all(20),
             height: 300,
             width: 1000,
             decoration: BoxDecoration(

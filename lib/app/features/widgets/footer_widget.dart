@@ -16,11 +16,59 @@ class FooterWidget extends StatelessWidget {
         bottom: 40,
         top: 40,
       ),
-      child: Center(
-          child: Text(
-        'Maciej Sulikowski',
-        style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 24),
-      )),
+      child: Column(
+        children: [
+          Text(
+            'Maciej Sulikowski',
+            style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 24),
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SocialMediaAvatar(
+                text: 'images/github.png',
+              ),
+              SocialMediaAvatar(
+                text: 'images/linkedin.png',
+              ),
+              SocialMediaAvatar(
+                text: 'images/fb.png',
+              ),
+              SocialMediaAvatar(
+                text: 'images/insta.png',
+              ),
+            ],
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+          Text(
+            '2024 All rights are reserved ©',
+            style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SocialMediaAvatar extends StatelessWidget {
+  const SocialMediaAvatar({
+    required this.text,
+    super.key,
+  });
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      child: Image(
+        image: AssetImage(text),
+      ),
     );
   }
 }
