@@ -39,14 +39,17 @@ class AboutAppWidget extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    '''Hi, I am 24 years old IT student and in my programming journey, I have already created 4 applications and 1 website in Flutter, of which I have already published 2 applications in the Google Play Store. I am currently improving my skills by  creating another application and trying to upgrade skills and be better every day''',
-                    style:
-                        GoogleFonts.aBeeZee(color: Colors.black, fontSize: 24),
+                    '''I am 24 years old IT student and in my programming journey, I have already created 4 applications and 1 website in Flutter, of which I have already published 2 applications in the Google Play Store.''',
+                    style: GoogleFonts.aBeeZee(
+                        color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(
                   '👋',
-                  style: GoogleFonts.aBeeZee(fontSize: 140),
+                  style:
+                      GoogleFonts.aBeeZee(fontSize: 140, color: Colors.amber),
                 )
               ],
             )),

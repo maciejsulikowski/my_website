@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_website/app/features/widgets/about_app_widget.dart';
+import 'package:my_website/app/features/widgets/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/contact_widget.dart';
 import 'package:my_website/app/features/widgets/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation_bar.dart';
@@ -46,6 +47,8 @@ class MainLayout extends StatelessWidget {
             SideBar(text: 'About Me'),
             SizedBox(height: 50),
             AboutAppWidget(),
+            SizedBox(height: 50),
+            AboutAppWidgetSecond(),
             SizedBox(height: 50),
             SideBar(text: 'Portfolio'),
             SizedBox(height: 50),

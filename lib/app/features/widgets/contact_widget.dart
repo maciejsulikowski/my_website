@@ -42,7 +42,7 @@ class ContactWidget extends StatelessWidget {
                 ),
               ),
               padding: const EdgeInsets.only(left: 20),
-              child: const Column(
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
@@ -56,15 +56,18 @@ class ContactWidget extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Phone',
-                            style: TextStyle(color: Colors.white, fontSize: 24),
-                          ),
+                          Text('Phone',
+                              style: GoogleFonts.aBeeZee(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              )),
                           SizedBox(height: 10),
-                          Text(
-                            '+48 793-744-201',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
+                          Text('+48 793-744-201',
+                              style: GoogleFonts.aBeeZee(
+                                color: Colors.white,
+                                fontSize: 20,
+                              )),
                         ],
                       ),
                     ],
@@ -80,15 +83,18 @@ class ContactWidget extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Form',
-                            style: TextStyle(color: Colors.white, fontSize: 24),
-                          ),
+                          Text('Form',
+                              style: GoogleFonts.aBeeZee(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              )),
                           SizedBox(height: 10),
-                          Text(
-                            'Fill out the form next to ➡️',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
+                          Text('Fill out the form ➡️',
+                              style: GoogleFonts.aBeeZee(
+                                color: Colors.white,
+                                fontSize: 20,
+                              )),
                         ],
                       ),
                     ],
@@ -104,15 +110,18 @@ class ContactWidget extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Email',
-                            style: TextStyle(color: Colors.white, fontSize: 24),
-                          ),
+                          Text('Email',
+                              style: GoogleFonts.aBeeZee(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              )),
                           SizedBox(height: 10),
-                          Text(
-                            'maciejsulikowski99@gmail.com',
-                            style: TextStyle(color: Colors.white, fontSize: 20),
-                          ),
+                          Text('maciejsulikowski99@gmail.com',
+                              style: GoogleFonts.aBeeZee(
+                                color: Colors.white,
+                                fontSize: 20,
+                              )),
                         ],
                       ),
                     ],
