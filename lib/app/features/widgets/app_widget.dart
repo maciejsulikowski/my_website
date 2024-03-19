@@ -6,12 +6,14 @@ class AppWidget extends StatelessWidget {
     required this.text,
     required this.secondText,
     required this.image,
+    required this.packages,
     super.key,
   });
 
   final String text;
   final String secondText;
   final String image;
+  final String packages;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,7 @@ class AppWidget extends StatelessWidget {
               offset: const Offset(0, 3),
             )
           ]),
-      height: 600,
+      height: 700,
       width: 500,
       child: Column(
         children: [
@@ -45,7 +47,7 @@ class AppWidget extends StatelessWidget {
             style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 36),
           ),
           const SizedBox(height: 20),
-           Image(
+          Image(
             image: AssetImage(image),
             width: 200,
             height: 200,
@@ -54,6 +56,16 @@ class AppWidget extends StatelessWidget {
             padding: const EdgeInsets.all(20),
             child: Text(
               secondText,
+              style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 22),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              packages,
               style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 22),
             ),
           ),

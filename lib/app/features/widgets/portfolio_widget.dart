@@ -15,11 +15,15 @@ class PortfolioWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AppWidget(
+                packages:
+                    'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/icon.png',
                 text: 'LifeDiary',
                 secondText:
                     'A great app for writing your own diaries and for planning your workouts along with organizing them. The app has more features such as a day planner, calculating how much water to drink or a to do list.'),
             AppWidget(
+                packages:
+                    'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/quizzz.png',
                 text: 'QuizQuest',
                 secondText:
@@ -31,11 +35,15 @@ class PortfolioWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AppWidget(
+                packages:
+                    'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/dayquote.png',
                 text: 'DayQuote',
                 secondText:
                     'An app to generate quotes and get inspired! You can search for an author and see what citations he or she has been assigned.'),
             AppWidget(
+                packages:
+                    'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/clouyde.png',
                 text: 'WeatherApp',
                 secondText:
