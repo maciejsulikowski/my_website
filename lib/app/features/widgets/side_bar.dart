@@ -12,7 +12,16 @@ class SideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color.fromRGBO(255, 255, 255, 1),
+            Color.fromRGBO(240, 240, 240, 1),
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+        ),
+      ),
       padding: const EdgeInsets.only(
         left: 100,
         right: 100,
@@ -22,7 +31,8 @@ class SideBar extends StatelessWidget {
       child: Center(
           child: Text(
         text,
-        style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 24),
+        style: GoogleFonts.aBeeZee(
+            color: Colors.black, fontSize: 36, fontWeight: FontWeight.bold),
       )),
     );
   }

@@ -52,7 +52,24 @@ class _NavigatorBarState extends State<NavigatorBar> {
     }
 
     return Container(
-      color: Colors.white,
+      decoration: BoxDecoration(
+        gradient: const LinearGradient(
+          colors: [
+            Color.fromRGBO(255, 255, 255, 1),
+            Color.fromRGBO(247, 250, 252, 1),
+          ],
+          begin: Alignment.bottomCenter,
+          end: Alignment.topCenter,
+        ),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.black.withOpacity(0.1),
+        //     spreadRadius: 4,
+        //     blurRadius: 10,
+        //     offset: const Offset(0, 3),
+        //   )
+        // ]
+      ),
       padding: const EdgeInsets.only(
         left: 100,
         right: 100,

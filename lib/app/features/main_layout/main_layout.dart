@@ -18,30 +18,16 @@ class MainLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    void scrollToSection(int sectionIndex) {
-      final RenderBox renderBox = listOfKeys[sectionIndex]
-          .currentContext!
-          .findRenderObject() as RenderBox;
-      final position = renderBox.localToGlobal(Offset.zero).dy;
-      final currentOffset = scrollController.offset;
-      final targetPosition = position + currentOffset;
-      scrollController.animateTo(
-        targetPosition,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOut,
-      );
-    }
-
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
             gradient: const LinearGradient(
               colors: [
-                Color.fromRGBO(225, 224, 224, 1),
-                Color.fromRGBO(198, 189, 189, 1),
+                Color.fromRGBO(255, 255, 255, 1),
+                Color.fromRGBO(200, 200, 200, 1),
               ],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
             ),
             boxShadow: [
               BoxShadow(
@@ -60,7 +46,9 @@ class MainLayout extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  const PersonalWidget(),
+                  PersonalWidget(
+                      listOfKeys: listOfKeys,
+                      scrollController: scrollController),
                   const SizedBox(
                     height: 50,
                   ),
@@ -78,7 +66,7 @@ class MainLayout extends StatelessWidget {
                     key: listOfKeys[2],
                   ),
                   const SizedBox(height: 50),
-                  const PortfolioWidget(),
+                  PortfolioWidget(),
                   const SizedBox(
                     height: 50,
                   ),

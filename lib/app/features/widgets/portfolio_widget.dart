@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/app_widget.dart';
+import 'package:url_launcher/url_launcher.dart' as launcher;
 
 class PortfolioWidget extends StatelessWidget {
   const PortfolioWidget({
@@ -8,10 +10,31 @@ class PortfolioWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
+        SizedBox(
+            width: double.infinity,
+            height: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'All my projects are on my Github Profile  ⮕',
+                  style: GoogleFonts.aBeeZee(
+                      color: Colors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                GitHubButton()
+              ],
+            )),
+        const SizedBox(height: 50),
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AppWidget(
@@ -52,6 +75,29 @@ class PortfolioWidget extends StatelessWidget {
         ),
         SizedBox(height: 50),
       ],
+    );
+  }
+}
+
+class GitHubButton extends StatelessWidget {
+  GitHubButton({
+    super.key,
+  });
+  final webSiteUri = Uri.parse('https://github.com/maciejsulikowski');
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: const Image(
+        image: AssetImage(
+          'images/github.png',
+        ),
+        width: 50,
+        height: 50,
+      ),
     );
   }
 }
