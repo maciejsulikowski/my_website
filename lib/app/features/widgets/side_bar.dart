@@ -16,10 +16,10 @@ class SideBar extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             Color.fromRGBO(255, 255, 255, 1),
-            Color.fromRGBO(240, 240, 240, 1),
+            Color.fromRGBO(200, 200, 200, 1),
           ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
       ),
       padding: const EdgeInsets.only(

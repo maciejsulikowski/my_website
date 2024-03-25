@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart' as launcher;
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({
@@ -25,21 +26,13 @@ class FooterWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              SocialMediaAvatar(
-                text: 'images/github.png',
-              ),
-              SocialMediaAvatar(
-                text: 'images/linkedin.png',
-              ),
-              SocialMediaAvatar(
-                text: 'images/fb.png',
-              ),
-              SocialMediaAvatar(
-                text: 'images/insta.png',
-              ),
+              GitHubButton(),
+              InstagramButton(),
+              FacebookButton(),
+              LinekdInButton(),
             ],
           ),
           const SizedBox(
@@ -55,19 +48,95 @@ class FooterWidget extends StatelessWidget {
   }
 }
 
-class SocialMediaAvatar extends StatelessWidget {
-  const SocialMediaAvatar({
-    required this.text,
+class GitHubButton extends StatelessWidget {
+  GitHubButton({
     super.key,
   });
-
-  final String text;
+  final webSiteUri = Uri.parse('https://github.com/maciejsulikowski');
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      child: Image(
-        image: AssetImage(text),
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: const Image(
+        image: AssetImage(
+          'images/github.png',
+        ),
+        width: 50,
+        height: 50,
+      ),
+    );
+  }
+}
+
+class InstagramButton extends StatelessWidget {
+  InstagramButton({
+    super.key,
+  });
+  final webSiteUri = Uri.parse('https://www.instagram.com/suleymani_99/');
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: const Image(
+        image: AssetImage(
+          'images/insta.png',
+        ),
+        width: 50,
+        height: 50,
+      ),
+    );
+  }
+}
+
+class FacebookButton extends StatelessWidget {
+  FacebookButton({
+    super.key,
+  });
+  final webSiteUri =
+      Uri.parse('https://www.facebook.com/maciek.sulikowski.58/');
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: const Image(
+        image: AssetImage(
+          'images/fb.png',
+        ),
+        width: 50,
+        height: 50,
+      ),
+    );
+  }
+}
+
+class LinekdInButton extends StatelessWidget {
+  LinekdInButton({
+    super.key,
+  });
+  final webSiteUri =
+      Uri.parse('https://www.linkedin.com/in/maciej-sulikowski-703542286/');
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: const Image(
+        image: AssetImage(
+          'images/linkedin.png',
+        ),
+        width: 50,
+        height: 50,
       ),
     );
   }

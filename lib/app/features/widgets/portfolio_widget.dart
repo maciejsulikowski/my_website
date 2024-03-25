@@ -13,26 +13,6 @@ class PortfolioWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-            width: double.infinity,
-            height: 100,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'All my projects are on my Github Profile  ⮕',
-                  style: GoogleFonts.aBeeZee(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                GitHubButton()
-              ],
-            )),
         const SizedBox(height: 50),
         const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -73,6 +53,27 @@ class PortfolioWidget extends StatelessWidget {
                     'Advanced weather app with search engine for each city and 5-day forecasts. You can check it whenever you want.'),
           ],
         ),
+        SizedBox(height: 50),
+        SizedBox(
+            width: double.infinity,
+            height: 100,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'All my projects are on my Github Profile  ⮕',
+                  style: GoogleFonts.aBeeZee(
+                      color: Colors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                GitHubButton()
+              ],
+            )),
         SizedBox(height: 50),
       ],
     );
