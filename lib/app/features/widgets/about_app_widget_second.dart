@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_website/app/features/widgets/about_app_widget_second_container.dart';
 import 'package:my_website/app/features/widgets/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/advantage_widget.dart';
 import 'package:my_website/app/features/widgets/app_widget.dart';
@@ -66,47 +67,10 @@ class AboutAppWidgetSecond extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 100),
-        Container(
-            padding: const EdgeInsets.all(20),
-            height: 300,
-            width: 1000,
-            decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(255, 255, 255, 1),
-                    Color.fromRGBO(246, 246, 246, 1),
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    spreadRadius: 4,
-                    blurRadius: 10,
-                    offset: const Offset(0, 3),
-                  )
-                ]),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Expanded(
-                  child: Text(
-                    '''My dream is to create the best possible value for people and improve their lives. Thanks to Flutter, I know this is possible and I want to become a master in this area. In contrast, my current goal is to get my first job as a junior.''',
-                    style: GoogleFonts.aBeeZee(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                Text(
-                  '💪',
-                  style:
-                      GoogleFonts.aBeeZee(fontSize: 140, color: Colors.amber),
-                )
-              ],
-            )),
+        const AboutAppSecondWidgetContainer(),
       ],
     );
   }
 }
+
+

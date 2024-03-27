@@ -74,7 +74,6 @@ class PortfolioWidget extends StatelessWidget {
                 GitHubButton()
               ],
             )),
-        SizedBox(height: 50),
       ],
     );
   }
