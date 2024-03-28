@@ -129,7 +129,7 @@ class _AppWidgetState extends State<AppWidget> {
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               Padding(
                 padding: const EdgeInsets.all(20),

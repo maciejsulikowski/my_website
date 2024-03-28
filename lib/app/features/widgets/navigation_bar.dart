@@ -53,23 +53,22 @@ class _NavigatorBarState extends State<NavigatorBar> {
 
     return Container(
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            Color.fromRGBO(255, 255, 255, 1),
-            Color.fromRGBO(247, 250, 252, 1),
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-        ),
-        // boxShadow: [
-        //   BoxShadow(
-        //     color: Colors.black.withOpacity(0.1),
-        //     spreadRadius: 4,
-        //     blurRadius: 10,
-        //     offset: const Offset(0, 3),
-        //   )
-        // ]
-      ),
+          gradient: const LinearGradient(
+            colors: [
+              Color.fromRGBO(255, 255, 255, 1),
+              Color.fromRGBO(247, 250, 252, 1),
+            ],
+            begin: Alignment.bottomCenter,
+            end: Alignment.topCenter,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 4,
+              blurRadius: 10,
+              offset: const Offset(0, 3),
+            )
+          ]),
       padding: const EdgeInsets.only(
         left: 100,
         right: 100,
@@ -96,6 +95,10 @@ class _NavigatorBarState extends State<NavigatorBar> {
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 500),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            isSelected1 ? Colors.black : Colors.white,
+                      ),
                       onPressed: () {
                         scrollToSection(1);
                       },
@@ -103,7 +106,8 @@ class _NavigatorBarState extends State<NavigatorBar> {
                           child: Text(
                         'About me',
                         style: GoogleFonts.aBeeZee(
-                            color: Colors.black, fontSize: 24),
+                            color: isSelected1 ? Colors.white : Colors.black,
+                            fontSize: 24),
                       )),
                     ),
                   ),
@@ -117,6 +121,10 @@ class _NavigatorBarState extends State<NavigatorBar> {
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 500),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            isSelected2 ? Colors.black : Colors.white,
+                      ),
                       onPressed: () {
                         scrollToSection(2);
                       },
@@ -124,7 +132,8 @@ class _NavigatorBarState extends State<NavigatorBar> {
                           child: Text(
                         'Portfolio',
                         style: GoogleFonts.aBeeZee(
-                            color: Colors.black, fontSize: 24),
+                            color: isSelected2 ? Colors.white : Colors.black,
+                            fontSize: 24),
                       )),
                     ),
                   ),
@@ -138,6 +147,10 @@ class _NavigatorBarState extends State<NavigatorBar> {
                   child: AnimatedContainer(
                     duration: const Duration(milliseconds: 500),
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            isSelected3 ? Colors.black : Colors.white,
+                      ),
                       onPressed: () {
                         scrollToSection(3);
                       },
@@ -145,7 +158,8 @@ class _NavigatorBarState extends State<NavigatorBar> {
                           child: Text(
                         'Contact',
                         style: GoogleFonts.aBeeZee(
-                            color: Colors.black, fontSize: 24),
+                            color: isSelected3 ? Colors.white : Colors.black,
+                            fontSize: 24),
                       )),
                     ),
                   ),

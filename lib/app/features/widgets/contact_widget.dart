@@ -47,12 +47,12 @@ class ContactWidget extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 40,
                         child: Icon(Icons.phone, color: Colors.black),
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -62,7 +62,7 @@ class ContactWidget extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
                               )),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text('+48 793-744-201',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
@@ -74,12 +74,12 @@ class ContactWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 40,
-                        child: Icon(Icons.email, color: Colors.black),
+                        child: Icon(Icons.description, color: Colors.black),
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -89,7 +89,7 @@ class ContactWidget extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
                               )),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text('Fill out the form ➡️',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
@@ -101,12 +101,12 @@ class ContactWidget extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      CircleAvatar(
+                      const CircleAvatar(
                         backgroundColor: Colors.white,
                         radius: 40,
-                        child: Icon(Icons.description, color: Colors.black),
+                        child: Icon(Icons.email, color: Colors.black),
                       ),
-                      SizedBox(width: 20),
+                      const SizedBox(width: 20),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -116,7 +116,7 @@ class ContactWidget extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
                               )),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text('maciejsulikowski99@gmail.com',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,

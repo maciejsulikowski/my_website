@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
 
-class PersonalWidget extends StatelessWidget {
+class PersonalWidget extends StatefulWidget {
   const PersonalWidget({
     required this.listOfKeys,
     required this.scrollController,
@@ -14,15 +14,21 @@ class PersonalWidget extends StatelessWidget {
   final List<GlobalKey> listOfKeys;
 
   @override
+  State<PersonalWidget> createState() => _PersonalWidgetState();
+}
+
+class _PersonalWidgetState extends State<PersonalWidget> {
+  bool isHovered = false;
+  @override
   Widget build(BuildContext context) {
     void scrollToSection(int sectionIndex) {
-      final RenderBox renderBox = listOfKeys[sectionIndex]
-          .currentContext!
-          .findRenderObject() as RenderBox;
+      final RenderBox renderBox =
+          widget.listOfKeys[sectionIndex].currentContext!.findRenderObject()
+              as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero).dy;
-      final currentOffset = scrollController.offset;
+      final currentOffset = widget.scrollController.offset;
       final targetPosition = position + currentOffset;
-      scrollController.animateTo(
+      widget.scrollController.animateTo(
         targetPosition,
         duration: const Duration(milliseconds: 500),
         curve: Curves.easeInOut,
@@ -108,17 +114,33 @@ class PersonalWidget extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                ElevatedButton(
-                    onPressed: () {
-                      scrollToSection(1);
-                    },
-                    child: Text(
-                      'Who am I ?',
-                      style: GoogleFonts.aBeeZee(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    )),
+                MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHovered = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHovered = false;
+                    });
+                  },
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor:
+                            isHovered ? Colors.black : Colors.white,
+                      ),
+                      onPressed: () {
+                        scrollToSection(1);
+                      },
+                      child: Text(
+                        'Who am I ?',
+                        style: GoogleFonts.aBeeZee(
+                            color: isHovered ? Colors.white : Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      )),
+                ),
               ],
             ),
           ),

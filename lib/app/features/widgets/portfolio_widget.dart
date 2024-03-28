@@ -91,24 +91,43 @@ class PortfolioWidget extends StatelessWidget {
   }
 }
 
-class GitHubButton extends StatelessWidget {
+class GitHubButton extends StatefulWidget {
   GitHubButton({
     super.key,
   });
+
+  @override
+  State<GitHubButton> createState() => _GitHubButtonState();
+}
+
+class _GitHubButtonState extends State<GitHubButton> {
   final webSiteUri = Uri.parse('https://github.com/maciejsulikowski');
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        launcher.launchUrl(webSiteUri);
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
       },
-      child: const Image(
-        image: AssetImage(
-          'images/github.png',
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: InkWell(
+        onTap: () {
+          launcher.launchUrl(webSiteUri);
+        },
+        child: Image(
+          image: AssetImage(
+            'images/github.png',
+          ),
+          width: isHovered ? 70 : 50,
+          height: isHovered ? 70 : 50,
         ),
-        width: 50,
-        height: 50,
       ),
     );
   }

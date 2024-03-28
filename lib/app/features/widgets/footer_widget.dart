@@ -48,95 +48,174 @@ class FooterWidget extends StatelessWidget {
   }
 }
 
-class GitHubButton extends StatelessWidget {
+class GitHubButton extends StatefulWidget {
   GitHubButton({
     super.key,
   });
+
+  @override
+  State<GitHubButton> createState() => _GitHubButtonState();
+}
+
+class _GitHubButtonState extends State<GitHubButton> {
   final webSiteUri = Uri.parse('https://github.com/maciejsulikowski');
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        launcher.launchUrl(webSiteUri);
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
       },
-      child: const Image(
-        image: AssetImage(
-          'images/github.png',
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: InkWell(
+        onTap: () {
+          launcher.launchUrl(webSiteUri);
+        },
+        child: Image(
+          image: const AssetImage(
+            'images/github.png',
+          ),
+          width: isHovered ? 70 : 50,
+          height: isHovered ? 70 : 50,
         ),
-        width: 50,
-        height: 50,
       ),
     );
   }
 }
 
-class InstagramButton extends StatelessWidget {
+class InstagramButton extends StatefulWidget {
   InstagramButton({
     super.key,
   });
+
+  @override
+  State<InstagramButton> createState() => _InstagramButtonState();
+}
+
+class _InstagramButtonState extends State<InstagramButton> {
   final webSiteUri = Uri.parse('https://www.instagram.com/suleymani_99/');
+
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        launcher.launchUrl(webSiteUri);
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
       },
-      child: const Image(
-        image: AssetImage(
-          'images/insta.png',
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: InkWell(
+        onTap: () {
+          launcher.launchUrl(webSiteUri);
+        },
+        child: Image(
+          image: const AssetImage(
+            'images/insta.png',
+          ),
+          width: isHovered ? 70 : 50,
+          height: isHovered ? 70 : 50,
         ),
-        width: 50,
-        height: 50,
       ),
     );
   }
 }
 
-class FacebookButton extends StatelessWidget {
+class FacebookButton extends StatefulWidget {
   FacebookButton({
     super.key,
   });
+
+  @override
+  State<FacebookButton> createState() => _FacebookButtonState();
+}
+
+class _FacebookButtonState extends State<FacebookButton> {
   final webSiteUri =
       Uri.parse('https://www.facebook.com/maciek.sulikowski.58/');
 
+  bool isHovered = false;
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        launcher.launchUrl(webSiteUri);
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
       },
-      child: const Image(
-        image: AssetImage(
-          'images/fb.png',
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: InkWell(
+        onTap: () {
+          launcher.launchUrl(webSiteUri);
+        },
+        child: Image(
+          image: const AssetImage(
+            'images/fb.png',
+          ),
+          width: isHovered ? 70 : 50,
+          height: isHovered ? 70 : 50,
         ),
-        width: 50,
-        height: 50,
       ),
     );
   }
 }
 
-class LinekdInButton extends StatelessWidget {
+class LinekdInButton extends StatefulWidget {
   LinekdInButton({
     super.key,
   });
+
+  @override
+  State<LinekdInButton> createState() => _LinekdInButtonState();
+}
+
+class _LinekdInButtonState extends State<LinekdInButton> {
   final webSiteUri =
       Uri.parse('https://www.linkedin.com/in/maciej-sulikowski-703542286/');
 
+  bool isHovered = false;
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        launcher.launchUrl(webSiteUri);
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
       },
-      child: const Image(
-        image: AssetImage(
-          'images/linkedin.png',
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: InkWell(
+        onTap: () {
+          launcher.launchUrl(webSiteUri);
+        },
+        child: Image(
+          image: const AssetImage(
+            'images/linkedin.png',
+          ),
+          width: isHovered ? 70 : 50,
+          height: isHovered ? 70 : 50,
         ),
-        width: 50,
-        height: 50,
       ),
     );
   }
