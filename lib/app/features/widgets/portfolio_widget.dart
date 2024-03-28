@@ -4,9 +4,17 @@ import 'package:my_website/app/features/widgets/app_widget.dart';
 import 'package:url_launcher/url_launcher.dart' as launcher;
 
 class PortfolioWidget extends StatelessWidget {
-  const PortfolioWidget({
+  PortfolioWidget({
     super.key,
   });
+
+  final firstLink = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.maciejsulikowskii.lifediary_project');
+  final secondLink = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.maciejsulikowski.day_quote');
+  final thirdLink = Uri.parse(
+      'https://play.google.com/store/apps/details?id=com.maciejsulikowski.quiz_quest');
+  final fourthLink = Uri.parse('https://github.com/maciejsulikowski');
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +22,11 @@ class PortfolioWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 50),
-        const Row(
+        Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AppWidget(
+                link: firstLink,
                 packages:
                     'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/icon.png',
@@ -25,6 +34,7 @@ class PortfolioWidget extends StatelessWidget {
                 secondText:
                     'A great app for writing your own diaries and for planning your workouts along with organizing them. The app has more features such as a day planner, calculating how much water to drink or a to do list.'),
             AppWidget(
+                link: thirdLink,
                 packages:
                     'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/quizzz.png',
@@ -38,6 +48,7 @@ class PortfolioWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             AppWidget(
+                link: secondLink,
                 packages:
                     'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/dayquote.png',
@@ -45,6 +56,7 @@ class PortfolioWidget extends StatelessWidget {
                 secondText:
                     'An app to generate quotes and get inspired! You can search for an author and see what citations he or she has been assigned.'),
             AppWidget(
+                link: fourthLink,
                 packages:
                     'Technology used: BloC/Cubit, Firebase, Rest API, Dio, Freezed, Retrofit, GetIt, Injectable, and Unit Tests',
                 image: 'images/clouyde.png',
