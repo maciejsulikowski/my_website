@@ -71,7 +71,7 @@ class _AdvantageWidgetState extends State<AdvantageWidget> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(
+                const Image(
                   image: AssetImage('images/flutter.png'),
                   width: 100,
                   height: 100,
@@ -80,7 +80,7 @@ class _AdvantageWidgetState extends State<AdvantageWidget> {
                   '+',
                   style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 22),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Image(

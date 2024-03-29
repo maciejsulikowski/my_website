@@ -25,17 +25,17 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
     curve: Curves.easeIn,
   );
 
-  @override
-  void initState() {
-    super.initState();
+  // @override
+  // void initState() {
+  //   super.initState();
 
-    _scrollController = ScrollController();
-    _scrollController.addListener(() {
-      setState(() {
-        pixels = _scrollController.position.pixels;
-      });
-    });
-  }
+  //   _scrollController = ScrollController();
+  //   _scrollController.addListener(() {
+  //     setState(() {
+  //       pixels = _scrollController.position.pixels;
+  //     });
+  //   });
+  // }
 
   @override
   void dispose() {

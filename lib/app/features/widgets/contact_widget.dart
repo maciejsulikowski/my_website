@@ -6,27 +6,73 @@ import 'package:my_website/app/features/widgets/text_fields/message_widget.dart'
 import 'package:my_website/app/features/widgets/text_fields/name_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/phone_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
-class ContactWidget extends StatelessWidget {
+class ContactWidget extends StatefulWidget {
   const ContactWidget({
     super.key,
   });
 
   @override
+  State<ContactWidget> createState() => _ContactWidgetState();
+}
+
+class _ContactWidgetState extends State<ContactWidget>
+    with TickerProviderStateMixin {
+  bool isHovered = false;
+  bool isShowed = false;
+  late final AnimationController _animationController = AnimationController(
+    duration: const Duration(milliseconds: 500),
+    vsync: this,
+  );
+
+  late final Animation<Offset> _animation = Tween<Offset>(
+    begin: const Offset(-1, 0),
+    end: Offset.zero,
+  ).animate(
+    CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
+  );
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        VisibilityDetector(
+          key: const Key('contactWidget'),
+          onVisibilityChanged: (visibilityInfo) {
+            if (visibilityInfo.visibleFraction == 1) {
+              _animationController.forward();
+            } else {
+              _animationController.reverse();
+            }
+          },
+          child: AnimatedBuilder(
+            animation: _animationController,
+            builder: (context, child) {
+              return SlideTransition(
+                position: _animation,
+                child: Text(
+                  'Do you have any questions? Feel free to ask! ',
+                  style: GoogleFonts.aBeeZee(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              );
+            },
+          ),
+        ),
         SizedBox(
-            width: double.infinity,
-            height: 100,
-            child: Text(
-              'Do you have any questions? Feel free to ask! ',
-              style: GoogleFonts.aBeeZee(
-                  color: Colors.black,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            )),
+          height: 50,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -166,22 +212,36 @@ class ContactWidget extends StatelessWidget {
                   const MessageTextField(),
                   Padding(
                     padding: const EdgeInsets.all(10),
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Send the message',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
-                        )),
+                    child: MouseRegion(
+                      onEnter: (_) {
+                        setState(() {
+                          isHovered = true;
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          isHovered = false;
+                        });
+                      },
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  isHovered ? Colors.grey : Colors.white),
+                          onPressed: () {},
+                          child: Text(
+                            'Send the message',
+                            style: GoogleFonts.aBeeZee(
+                                color: isHovered ? Colors.white : Colors.black,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          )),
+                    ),
                   ),
                 ],
               ),
             )
           ],
         ),
-        const SizedBox(height: 50),
       ],
     );
   }

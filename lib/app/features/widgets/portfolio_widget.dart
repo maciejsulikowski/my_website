@@ -43,7 +43,7 @@ class PortfolioWidget extends StatelessWidget {
                     'An application where you can test your knowledge, develop it in many interesting areas such as science, sports or many others, and have fun on top of that.'),
           ],
         ),
-        SizedBox(height: 50),
+        const SizedBox(height: 50),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
