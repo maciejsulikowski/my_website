@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_website/app/features/widgets/about_me_widget.dart';
-import 'package:my_website/app/features/widgets/app_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
+import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class AboutAppWidget extends StatefulWidget {
@@ -24,18 +24,6 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
     parent: _animationController,
     curve: Curves.easeIn,
   );
-
-  // @override
-  // void initState() {
-  //   super.initState();
-
-  //   _scrollController = ScrollController();
-  //   _scrollController.addListener(() {
-  //     setState(() {
-  //       pixels = _scrollController.position.pixels;
-  //     });
-  //   });
-  // }
 
   @override
   void dispose() {

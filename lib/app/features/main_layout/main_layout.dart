@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_website/app/features/widgets/about_app_widget.dart';
-import 'package:my_website/app/features/widgets/about_app_widget_second.dart';
-import 'package:my_website/app/features/widgets/contact_widget.dart';
-import 'package:my_website/app/features/widgets/footer_widget.dart';
-import 'package:my_website/app/features/widgets/navigation_bar.dart';
-import 'package:my_website/app/features/widgets/personal_widget.dart';
-import 'package:my_website/app/features/widgets/portfolio_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
+import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
+import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
+import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
+import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
+import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
 import 'package:my_website/app/features/widgets/side_bar.dart';
 
 class MainLayout extends StatelessWidget {

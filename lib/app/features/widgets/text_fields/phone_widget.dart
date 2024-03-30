@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PhoneTextField extends StatelessWidget {
-  const PhoneTextField({
+class SubjectTextField extends StatelessWidget {
+  const SubjectTextField({
     super.key,
   });
 
@@ -37,7 +37,7 @@ class PhoneTextField extends StatelessWidget {
               style: GoogleFonts.aBeeZee(fontSize: 16),
               decoration: const InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Phone number...',
+                hintText: 'Subject...',
               ),
             ),
           ),
