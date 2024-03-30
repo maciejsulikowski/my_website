@@ -26,18 +26,25 @@ class _ContactWidgetState extends State<ContactWidget>
     vsync: this,
   );
 
-  late final Animation<Offset> _animation = Tween<Offset>(
+  late final Animation<Offset> _textAnimation = Tween<Offset>(
     begin: const Offset(-1, 0),
     end: Offset.zero,
   ).animate(
     CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
   );
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
+  late final AnimationController _rightAnimationController =
+      AnimationController(
+    duration: const Duration(milliseconds: 500),
+    vsync: this,
+  );
+
+  late final Animation<Offset> _rightAnimation = Tween<Offset>(
+    begin: const Offset(0.2, 0),
+    end: Offset.zero,
+  ).animate(
+    CurvedAnimation(parent: _rightAnimationController, curve: Curves.easeIn),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +63,7 @@ class _ContactWidgetState extends State<ContactWidget>
             animation: _animationController,
             builder: (context, child) {
               return SlideTransition(
-                position: _animation,
+                position: _textAnimation,
                 child: Text(
                   'Do you have any questions? Feel free to ask! ',
                   style: GoogleFonts.aBeeZee(
@@ -70,13 +77,146 @@ class _ContactWidgetState extends State<ContactWidget>
             },
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 50,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
+            const LeftContactWidget(),
+            VisibilityDetector(
+              key: const Key('RightContactContainer'),
+              onVisibilityChanged: (visibilityInfo) {
+                if (visibilityInfo.visibleFraction == 1) {
+                  _rightAnimationController.forward();
+                } else {
+                  _rightAnimationController.reverse();
+                }
+              },
+              child: AnimatedBuilder(
+                animation: _rightAnimationController,
+                builder: (context, child) {
+                  return SlideTransition(
+                    position: _rightAnimation,
+                    child: Container(
+                      height: 600,
+                      width: 500,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: const LinearGradient(
+                          colors: [
+                            Color.fromRGBO(0, 0, 0, 1),
+                            Color.fromRGBO(0, 0, 0, 1),
+                          ],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                        ),
+                      ),
+                      child: Column(
+                        children: [
+                          const Row(
+                            children: [
+                              NameTextField(),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              SurnameTextField(),
+                            ],
+                          ),
+                          const Row(
+                            children: [
+                              EmailTextField(),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              PhoneTextField(),
+                            ],
+                          ),
+                          const MessageTextField(),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: MouseRegion(
+                              onEnter: (_) {
+                                setState(() {
+                                  isHovered = true;
+                                });
+                              },
+                              onExit: (_) {
+                                setState(() {
+                                  isHovered = false;
+                                });
+                              },
+                              child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: isHovered
+                                          ? Colors.grey
+                                          : Colors.white),
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Send the message',
+                                    style: GoogleFonts.aBeeZee(
+                                        color: isHovered
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            )
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class LeftContactWidget extends StatefulWidget {
+  const LeftContactWidget({
+    super.key,
+  });
+
+  @override
+  State<LeftContactWidget> createState() => _LeftContactWidgetState();
+}
+
+class _LeftContactWidgetState extends State<LeftContactWidget>
+    with TickerProviderStateMixin {
+  late final AnimationController _leftAnimationController = AnimationController(
+    duration: const Duration(milliseconds: 500),
+    vsync: this,
+  );
+
+  late final Animation<Offset> _leftAnimation = Tween<Offset>(
+    begin: const Offset(-0.2, 0),
+    end: Offset.zero,
+  ).animate(
+    CurvedAnimation(parent: _leftAnimationController, curve: Curves.easeIn),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return VisibilityDetector(
+      key: Key('LeftContact'),
+      onVisibilityChanged: (visibilityInfo) {
+        if (visibilityInfo.visibleFraction == 1) {
+          _leftAnimationController.forward();
+        } else {
+          _leftAnimationController.reverse();
+        }
+      },
+      child: AnimatedBuilder(
+        animation: _leftAnimationController,
+        builder: (context, child) {
+          return SlideTransition(
+            position: _leftAnimation,
+            child: Container(
               height: 600,
               width: 500,
               decoration: BoxDecoration(
@@ -175,74 +315,9 @@ class _ContactWidgetState extends State<ContactWidget>
                 ],
               ),
             ),
-            Container(
-              height: 600,
-              width: 500,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(0, 0, 0, 1),
-                    Color.fromRGBO(0, 0, 0, 1),
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
-              child: Column(
-                children: [
-                  const Row(
-                    children: [
-                      NameTextField(),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      SurnameTextField(),
-                    ],
-                  ),
-                  const Row(
-                    children: [
-                      EmailTextField(),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      PhoneTextField(),
-                    ],
-                  ),
-                  const MessageTextField(),
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: MouseRegion(
-                      onEnter: (_) {
-                        setState(() {
-                          isHovered = true;
-                        });
-                      },
-                      onExit: (_) {
-                        setState(() {
-                          isHovered = false;
-                        });
-                      },
-                      child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor:
-                                  isHovered ? Colors.grey : Colors.white),
-                          onPressed: () {},
-                          child: Text(
-                            'Send the message',
-                            style: GoogleFonts.aBeeZee(
-                                color: isHovered ? Colors.white : Colors.black,
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold),
-                          )),
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ],
+          );
+        },
+      ),
     );
   }
 }
