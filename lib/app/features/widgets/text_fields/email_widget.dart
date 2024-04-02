@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class EmailTextField extends StatelessWidget {
   const EmailTextField({
+    required this.emailController,
     super.key,
   });
+
+  final TextEditingController emailController;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +37,7 @@ class EmailTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
+              controller: emailController,
               style: GoogleFonts.aBeeZee(fontSize: 16),
               decoration: const InputDecoration(
                 border: InputBorder.none,

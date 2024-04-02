@@ -4,7 +4,7 @@ import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/email_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/message_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/name_widget.dart';
-import 'package:my_website/app/features/widgets/text_fields/phone_widget.dart';
+import 'package:my_website/app/features/widgets/text_fields/subject_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 

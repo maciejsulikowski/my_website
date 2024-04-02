@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SubjectTextField extends StatelessWidget {
   const SubjectTextField({
+    required this.subjectController,
     super.key,
   });
+
+  final TextEditingController subjectController;
 
   @override
   Widget build(BuildContext context) {

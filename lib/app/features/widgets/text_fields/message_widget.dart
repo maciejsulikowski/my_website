@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MessageTextField extends StatelessWidget {
   const MessageTextField({
+    required this.messageController,
     super.key,
   });
+
+  final TextEditingController messageController;
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/email_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/message_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/name_widget.dart';
-import 'package:my_website/app/features/widgets/text_fields/phone_widget.dart';
+import 'package:my_website/app/features/widgets/text_fields/subject_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -21,6 +21,11 @@ class ContactWidget extends StatefulWidget {
 class _ContactWidgetState extends State<ContactWidget>
     with TickerProviderStateMixin {
   bool isHovered = false;
+  final nameController = TextEditingController();
+  final surnameController = TextEditingController();
+  final emailController = TextEditingController();
+  final subjectController = TextEditingController();
+  final messageController = TextEditingController();
 
   late final AnimationController _animationController = AnimationController(
     duration: const Duration(milliseconds: 500),
@@ -115,25 +120,35 @@ class _ContactWidgetState extends State<ContactWidget>
                       ),
                       child: Column(
                         children: [
-                          const Row(
+                          Row(
                             children: [
-                              NameTextField(),
-                              SizedBox(
+                              NameTextField(
+                                nameController: nameController,
+                              ),
+                              const SizedBox(
                                 width: 10,
                               ),
-                              SurnameTextField(),
+                              SurnameTextField(
+                                surnameController: surnameController,
+                              ),
                             ],
                           ),
-                          const Row(
+                          Row(
                             children: [
-                              EmailTextField(),
-                              SizedBox(
+                              EmailTextField(
+                                emailController: emailController,
+                              ),
+                              const SizedBox(
                                 width: 10,
                               ),
-                              SubjectTextField(),
+                              SubjectTextField(
+                                subjectController: subjectController,
+                              ),
                             ],
                           ),
-                          const MessageTextField(),
+                          MessageTextField(
+                            messageController: messageController,
+                          ),
                           Padding(
                             padding: const EdgeInsets.all(10),
                             child: MouseRegion(

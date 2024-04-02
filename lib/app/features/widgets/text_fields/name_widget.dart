@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class NameTextField extends StatelessWidget {
   const NameTextField({
+    required this.nameController,
     super.key,
   });
+
+  final TextEditingController nameController;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +37,7 @@ class NameTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
+              controller: nameController,
               style: GoogleFonts.aBeeZee(fontSize: 16),
               decoration: const InputDecoration(
                 border: InputBorder.none,

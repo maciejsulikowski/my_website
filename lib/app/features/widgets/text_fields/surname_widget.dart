@@ -3,8 +3,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SurnameTextField extends StatelessWidget {
   const SurnameTextField({
+    required this.surnameController,
     super.key,
   });
+
+  final TextEditingController surnameController;
 
   @override
   Widget build(BuildContext context) {
