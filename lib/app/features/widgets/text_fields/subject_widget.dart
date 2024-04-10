@@ -37,6 +37,7 @@ class SubjectTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
+              controller: subjectController,
               style: GoogleFonts.aBeeZee(fontSize: 16),
               decoration: const InputDecoration(
                 border: InputBorder.none,

@@ -35,7 +35,7 @@ class _LeftContactWidgetState extends State<LeftContactWidget>
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: Key('LeftContact'),
+      key: const Key('LeftContact'),
       onVisibilityChanged: (visibilityInfo) {
         if (visibilityInfo.visibleFraction == 1) {
           _leftAnimationController.forward();

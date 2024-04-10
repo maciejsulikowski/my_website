@@ -37,6 +37,7 @@ class MessageTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
+              controller: messageController,
               maxLines: null,
               style: GoogleFonts.aBeeZee(fontSize: 16),
               decoration: const InputDecoration(

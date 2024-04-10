@@ -1,7 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/contact/left_contact_widget.dart';
-import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
+import 'package:http/http.dart' as http;
 import 'package:my_website/app/features/widgets/text_fields/email_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/message_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/name_widget.dart';
@@ -18,14 +19,102 @@ class ContactWidget extends StatefulWidget {
   State<ContactWidget> createState() => _ContactWidgetState();
 }
 
+bool isHovered = false;
+final nameController = TextEditingController();
+final surnameController = TextEditingController();
+final emailController = TextEditingController();
+final subjectController = TextEditingController();
+final messageController = TextEditingController();
+
+Future sendEmail() async {
+  final url = Uri.parse('https://api.emailjs.com/api/v1.0/email/send');
+  const serviceId = 'service_x3rrh49';
+  const templateId = 'template_83su3ct';
+  const userId = 'AmsrRpY6J4rchbJow';
+  final response = await http.post(url,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: json.encode({
+        'service_id': serviceId,
+        'template_id': templateId,
+        'user_id': userId,
+        'template_params': {
+          'user_subject': subjectController.text,
+          'user_name': nameController.text,
+          'user_surname': surnameController.text,
+          'user_message': messageController.text,
+          'user_email': emailController.text,
+        }
+      }));
+
+  return response.statusCode;
+}
+
 class _ContactWidgetState extends State<ContactWidget>
     with TickerProviderStateMixin {
-  bool isHovered = false;
-  final nameController = TextEditingController();
-  final surnameController = TextEditingController();
-  final emailController = TextEditingController();
-  final subjectController = TextEditingController();
-  final messageController = TextEditingController();
+  void wrongMessage() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.red,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30))),
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Wypełnij wszystkie pola zanim wyślesz wiadomość!',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )),
+    );
+  }
+
+  void wrongMessage2() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.red,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30))),
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Niepoprawny e-mail!',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )),
+    );
+  }
+
+  void correctMessage() {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.green,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(30))),
+          content: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text(
+              'Wiadomość została wysłana! Odezwiemy się tak szybko jak to możliwe',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 16,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          )),
+    );
+  }
 
   late final AnimationController _animationController = AnimationController(
     duration: const Duration(milliseconds: 500),
@@ -167,7 +256,26 @@ class _ContactWidgetState extends State<ContactWidget>
                                       backgroundColor: isHovered
                                           ? Colors.grey
                                           : Colors.white),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    if (emailController.text.isEmpty ||
+                                        messageController.text.isEmpty ||
+                                        subjectController.text.isEmpty ||
+                                        nameController.text.isEmpty ||
+                                        surnameController.text.isEmpty) {
+                                      wrongMessage();
+                                    } else if (!emailController.text
+                                        .contains('@')) {
+                                      wrongMessage2();
+                                    } else {
+                                      sendEmail();
+                                      correctMessage();
+                                      emailController.clear();
+                                      messageController.clear();
+                                      subjectController.clear();
+                                      nameController.clear();
+                                      surnameController.clear();
+                                    }
+                                  },
                                   child: Text(
                                     'Send the message',
                                     style: GoogleFonts.aBeeZee(
