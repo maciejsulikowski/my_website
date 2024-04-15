@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
+import 'package:my_website/app/features/widgets/floating_action_buttons/language_floating_action_button.dart';
+import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
 import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
@@ -19,14 +23,19 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.black,
-        shape: const CircleBorder(),
-        child: Icon(
-          Icons.arrow_upward,
-          color: Colors.white,
-        ),
+      floatingActionButton: const Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 40),
+            child: SizedBox(
+              height: 40,
+              width: 90,
+              child: LanguageFloatingActionButton(),
+            ),
+          ),
+          UpArrowFloatingActionButton(),
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
