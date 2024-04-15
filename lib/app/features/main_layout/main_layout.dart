@@ -19,6 +19,15 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.black,
+        shape: const CircleBorder(),
+        child: Icon(
+          Icons.arrow_upward,
+          color: Colors.white,
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(
             gradient: const LinearGradient(
