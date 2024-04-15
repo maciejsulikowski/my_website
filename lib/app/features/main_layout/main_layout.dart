@@ -23,10 +23,10 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: const Row(
+      floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 40),
             child: SizedBox(
               height: 40,
@@ -34,7 +34,10 @@ class MainLayout extends StatelessWidget {
               child: LanguageFloatingActionButton(),
             ),
           ),
-          UpArrowFloatingActionButton(),
+          UpArrowFloatingActionButton(
+            listOfKeys: listOfKeys,
+            scrollController: scrollController,
+          ),
         ],
       ),
       body: Container(
@@ -61,7 +64,8 @@ class MainLayout extends StatelessWidget {
               controller: scrollController,
               child: Column(
                 children: [
-                  const SizedBox(
+                  SizedBox(
+                    key: listOfKeys[0],
                     height: 50,
                   ),
                   PersonalWidget(
