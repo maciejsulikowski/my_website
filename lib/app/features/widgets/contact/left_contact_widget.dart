@@ -8,7 +8,6 @@ import 'package:my_website/app/features/widgets/text_fields/subject_widget.dart'
 import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-
 class LeftContactWidget extends StatefulWidget {
   const LeftContactWidget({
     super.key,
@@ -49,7 +48,7 @@ class _LeftContactWidgetState extends State<LeftContactWidget>
           return SlideTransition(
             position: _leftAnimation,
             child: Container(
-              height: 600,
+              height: 500,
               width: 500,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),

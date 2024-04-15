@@ -194,7 +194,7 @@ class _ContactWidgetState extends State<ContactWidget>
                   return SlideTransition(
                     position: _rightAnimation,
                     child: Container(
-                      height: 600,
+                      height: 500,
                       width: 500,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),

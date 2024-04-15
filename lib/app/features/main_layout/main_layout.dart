@@ -24,7 +24,7 @@ class MainLayout extends StatelessWidget {
             gradient: const LinearGradient(
               colors: [
                 Color.fromRGBO(255, 255, 255, 1),
-                Color.fromRGBO(200, 200, 200, 1),
+                Color.fromRGBO(255, 255, 255, 1),
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,

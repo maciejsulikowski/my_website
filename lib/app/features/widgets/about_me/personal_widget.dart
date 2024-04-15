@@ -27,7 +27,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
               as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero).dy;
       final currentOffset = widget.scrollController.offset;
-      final targetPosition = position + currentOffset;
+      final targetPosition = position + currentOffset + 30;
       widget.scrollController.animateTo(
         targetPosition,
         duration: const Duration(milliseconds: 500),
