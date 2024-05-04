@@ -23,33 +23,30 @@ class MainLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(left: 40),
-                child: SizedBox(
+          const Padding(
+            padding: EdgeInsets.only(left: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
                   height: 40,
                   width: 100,
                   child: LanguageFloatingActionButton(),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: 40,
+                  width: 100,
+                  child: LanguageFloatingActionButton(),
+                ),
+              ],
+            ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 40),
-                child: SizedBox(
-                  height: 40,
-                  width: 100,
-                  child: LanguageFloatingActionButton(),
-                ),
-              ),
               UpArrowFloatingActionButton(
                 listOfKeys: listOfKeys,
                 scrollController: scrollController,
