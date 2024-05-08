@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
-import 'package:my_website/app/features/widgets/floating_action_buttons/language_floating_action_button.dart';
+
+import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
 import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
 import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
@@ -12,13 +13,21 @@ import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
 import 'package:my_website/app/features/widgets/side_bar.dart';
 
-class MainLayout extends StatelessWidget {
+class MainLayout extends StatefulWidget {
   MainLayout({
     super.key,
   });
 
+  @override
+  State<MainLayout> createState() => _MainLayoutState();
+}
+
+class _MainLayoutState extends State<MainLayout> {
   final ScrollController scrollController = ScrollController();
+
   final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
+
+  bool isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,21 +35,12 @@ class MainLayout extends StatelessWidget {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 40),
+          Padding(
+            padding: const EdgeInsets.only(left: 40),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SizedBox(
-                  height: 40,
-                  width: 100,
-                  child: LanguageFloatingActionButton(),
-                ),
-                SizedBox(
-                  height: 40,
-                  width: 100,
-                  child: LanguageFloatingActionButton(),
-                ),
+                SecondLanguageActionButton(),
               ],
             ),
           ),
@@ -135,3 +135,18 @@ class MainLayout extends StatelessWidget {
     );
   }
 }
+
+// class ButtonWidget extends StatelessWidget {
+//   const ButtonWidget({
+//     super.key,
+//   });
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return SizedBox(
+//       height: 40,
+//       width: 100,
+//       child: SecondLanguageActionButton(),
+//     );
+//   }
+// }
