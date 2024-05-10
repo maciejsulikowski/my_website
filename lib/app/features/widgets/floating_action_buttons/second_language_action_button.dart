@@ -5,8 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SecondLanguageActionButton extends StatefulWidget {
   SecondLanguageActionButton({
+    required this.setLocale,
     super.key,
   });
+
+  final Function(Locale) setLocale;
 
   @override
   State<SecondLanguageActionButton> createState() =>
@@ -27,9 +30,9 @@ class SecondLanguageActionButtonState
   void selectLanguage(String language) {
     setState(() {
       if (selectedLanguage != language) {
-        // Zmiana języka tylko wtedy, gdy jest inny niż obecnie wybrany
         selectedLanguage = language;
         isExpanded = false;
+        widget.setLocale(Locale(language.toLowerCase()));
       }
     });
   }

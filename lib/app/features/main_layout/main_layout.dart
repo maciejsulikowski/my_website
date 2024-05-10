@@ -16,7 +16,10 @@ import 'package:my_website/app/features/widgets/side_bar.dart';
 class MainLayout extends StatefulWidget {
   MainLayout({
     super.key,
+    required this.setLocale,
   });
+
+  final Function(Locale) setLocale;
 
   @override
   State<MainLayout> createState() => _MainLayoutState();
@@ -26,8 +29,6 @@ class _MainLayoutState extends State<MainLayout> {
   final ScrollController scrollController = ScrollController();
 
   final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
-
-  bool isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +41,9 @@ class _MainLayoutState extends State<MainLayout> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SecondLanguageActionButton(),
+                SecondLanguageActionButton(
+                  setLocale: widget.setLocale,
+                ),
               ],
             ),
           ),

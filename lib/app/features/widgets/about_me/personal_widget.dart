@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PersonalWidget extends StatefulWidget {
   const PersonalWidget({
@@ -70,7 +71,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                 Row(
                   children: [
                     Text(
-                      '''A''',
+                      AppLocalizations.of(context)!.one,
                       style: GoogleFonts.aBeeZee(
                           color: Colors.black, fontSize: 24),
                     ),

@@ -4,12 +4,32 @@ import 'package:my_website/main.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  late Locale locale;
+
+  @override
+  void initState() {
+    locale = Locale('pl');
+    super.initState();
+  }
+
+  void setLocale(Locale value) {
+    setState(() {
+      locale = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      locale: locale,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -25,7 +45,9 @@ class MyApp extends StatelessWidget {
         Locale('en'), // English
         Locale('pl'), // Polish
       ],
-      home: MainLayout(),
+      home: MainLayout(
+        setLocale: setLocale,
+      ),
     );
   }
 }
