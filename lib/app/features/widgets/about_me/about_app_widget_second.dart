@@ -4,6 +4,7 @@ import 'package:my_website/app/features/widgets/about_me/about_app_widget_second
 import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/advantage_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutAppWidgetSecond extends StatelessWidget {
   const AboutAppWidgetSecond({
@@ -20,7 +21,7 @@ class AboutAppWidgetSecond extends StatelessWidget {
             height: 100,
             width: 1000,
             child: Text(
-              '''Why am I using Flutter?''',
+              AppLocalizations.of(context)!.why,
               style: GoogleFonts.aBeeZee(
                 color: Colors.black,
                 fontSize: 24,
@@ -28,38 +29,38 @@ class AboutAppWidgetSecond extends StatelessWidget {
               textAlign: TextAlign.center,
             )),
         const SizedBox(height: 50),
-        const Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AdvantageWidget(
-              text: 'Mobile Development',
+              text: AppLocalizations.of(context)!.mobile,
               image: 'images/mobile.png',
               secondText:
-                  'Flutter is great for building mobile apps. With it, we can write one code for Android and IOS without losing too much performance. It saves a lot of time and money. ',
+                  AppLocalizations.of(context)!.flutter_mobile,
             ),
             SizedBox(
               width: 50,
             ),
             AdvantageWidget(
-              text: 'Web Development',
+              text:  AppLocalizations.of(context)!.web,
               image: 'images/web.png',
               secondText:
-                  'Flutter is also great for websites. With the power of this framework, you can create a site like this one and many, many other, more advanced web applications.',
+                   AppLocalizations.of(context)!.flutter_web,
             ),
             SizedBox(
               width: 50,
             ),
             AdvantageWidget(
-              text: 'UX & UI',
+              text:  AppLocalizations.of(context)!.ux,
               image: 'images/ux.png',
               secondText:
-                  'Flutter allows you to create advanced views and beautiful User interfaces and User experiences that will delight any user, and on top of that, everything runs very smoothly. Flutter is the future!',
+                   AppLocalizations.of(context)!.flutter_ux,
             ),
           ],
         ),
         const SizedBox(height: 100),
         Text(
-          'What I want to achieve?',
+          AppLocalizations.of(context)!.help,
           style: GoogleFonts.aBeeZee(
             color: Colors.black,
             fontSize: 24,

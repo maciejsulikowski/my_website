@@ -35,7 +35,7 @@ class _GitHubButtonState extends State<GitHubButton> {
           launcher.launchUrl(webSiteUri);
         },
         child: Image(
-          image: AssetImage(
+          image: const AssetImage(
             'images/github.png',
           ),
           width: isHovered ? 70 : 50,

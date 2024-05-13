@@ -12,6 +12,7 @@ import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
 import 'package:my_website/app/features/widgets/side_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MainLayout extends StatefulWidget {
   MainLayout({
@@ -93,7 +94,7 @@ class _MainLayoutState extends State<MainLayout> {
                     height: 50,
                   ),
                   SideBar(
-                    text: 'About Me',
+                    text: AppLocalizations.of(context)!.about_me,
                     key: listOfKeys[1],
                   ),
                   const SizedBox(height: 50),
@@ -102,7 +103,7 @@ class _MainLayoutState extends State<MainLayout> {
                   const AboutAppWidgetSecond(),
                   const SizedBox(height: 50),
                   SideBar(
-                    text: 'Portfolio',
+                    text: AppLocalizations.of(context)!.portfolio,
                     key: listOfKeys[2],
                   ),
                   const SizedBox(height: 50),
@@ -111,7 +112,7 @@ class _MainLayoutState extends State<MainLayout> {
                     height: 50,
                   ),
                   SideBar(
-                    text: 'Contact',
+                    text: AppLocalizations.of(context)!.contact,
                     key: listOfKeys[3],
                   ),
                   const SizedBox(
@@ -138,18 +139,3 @@ class _MainLayoutState extends State<MainLayout> {
     );
   }
 }
-
-// class ButtonWidget extends StatelessWidget {
-//   const ButtonWidget({
-//     super.key,
-//   });
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return SizedBox(
-//       height: 40,
-//       width: 100,
-//       child: SecondLanguageActionButton(),
-//     );
-//   }
-// }

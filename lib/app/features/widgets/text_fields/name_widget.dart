@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NameTextField extends StatelessWidget {
   const NameTextField({
@@ -39,9 +40,9 @@ class NameTextField extends StatelessWidget {
             child: TextField(
               controller: nameController,
               style: GoogleFonts.aBeeZee(fontSize: 16),
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Name...',
+                hintText: AppLocalizations.of(context)!.name,
               ),
             ),
           ),

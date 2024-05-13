@@ -54,7 +54,7 @@ class SecondLanguageActionButtonState
                 children: [
                   Container(
                     margin: const EdgeInsets.all(5),
-                    child: Image(
+                    child: const Image(
                       image: AssetImage(
                         'images/great_britain.png',
                       ),

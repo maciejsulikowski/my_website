@@ -9,6 +9,7 @@ import 'package:my_website/app/features/widgets/text_fields/name_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/subject_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ContactWidget extends StatefulWidget {
   const ContactWidget({
@@ -55,16 +56,16 @@ class _ContactWidgetState extends State<ContactWidget>
     with TickerProviderStateMixin {
   void wrongMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
+       SnackBar(
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(30))),
           content: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Wypełnij wszystkie pola zanim wyślesz wiadomość!',
-              style: TextStyle(
+              AppLocalizations.of(context)!.wrong_message_1,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
@@ -76,16 +77,16 @@ class _ContactWidgetState extends State<ContactWidget>
 
   void wrongMessage2() {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
+       SnackBar(
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(30))),
+          shape: const RoundedRectangleBorder(
+              borderRadius:  BorderRadius.all(Radius.circular(30))),
           content: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Niepoprawny e-mail!',
-              style: TextStyle(
+              AppLocalizations.of(context)!.wrong_message_2,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
@@ -97,16 +98,16 @@ class _ContactWidgetState extends State<ContactWidget>
 
   void correctMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
+       SnackBar(
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.green,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(30))),
           content: Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
-              'Wiadomość została wysłana! Odezwiemy się tak szybko jak to możliwe',
-              style: TextStyle(
+              AppLocalizations.of(context)!.correct_message,
+              style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
               ),
@@ -160,7 +161,7 @@ class _ContactWidgetState extends State<ContactWidget>
               return SlideTransition(
                 position: _textAnimation,
                 child: Text(
-                  'Do you have any questions? Feel free to ask! ',
+                  AppLocalizations.of(context)!.questions,
                   style: GoogleFonts.aBeeZee(
                     color: Colors.black,
                     fontSize: 24,
@@ -277,7 +278,8 @@ class _ContactWidgetState extends State<ContactWidget>
                                     }
                                   },
                                   child: Text(
-                                    'Send the message',
+                                    AppLocalizations.of(context)!
+                                        .send_message,
                                     style: GoogleFonts.aBeeZee(
                                         color: isHovered
                                             ? Colors.white

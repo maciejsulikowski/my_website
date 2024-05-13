@@ -50,7 +50,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                 Row(
                   children: [
                     Text(
-                      '''Hi there, Welcome to my space''',
+                      AppLocalizations.of(context)!.hi_there,
                       style: GoogleFonts.aBeeZee(
                           color: Colors.black, fontSize: 24),
                     ),
@@ -64,7 +64,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  '''I'm Maciej Sulikowski''',
+                  '${AppLocalizations.of(context)!.my_name} Maciej Sulikowski',
                   style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 40),
                 ),
                 const SizedBox(height: 20),
@@ -109,7 +109,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  '''I am that guy who loves to create value for others in every possible form. Let's get to know each other better! ''',
+                  AppLocalizations.of(context)!.guy,
                   style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 18),
                 ),
                 const SizedBox(
@@ -135,7 +135,7 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                         scrollToSection(1);
                       },
                       child: Text(
-                        'Who am I ?',
+                        AppLocalizations.of(context)!.who,
                         style: GoogleFonts.aBeeZee(
                             color: isHovered ? Colors.white : Colors.black,
                             fontSize: 24,

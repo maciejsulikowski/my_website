@@ -7,6 +7,7 @@ import 'package:my_website/app/features/widgets/text_fields/name_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/subject_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LeftContactWidget extends StatefulWidget {
   const LeftContactWidget({
@@ -73,7 +74,7 @@ class _LeftContactWidgetState extends State<LeftContactWidget>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Phone',
+                          Text(AppLocalizations.of(context)!.phone,
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
@@ -100,14 +101,14 @@ class _LeftContactWidgetState extends State<LeftContactWidget>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text('Form',
+                          Text(AppLocalizations.of(context)!.form,
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24,
                               )),
                           const SizedBox(height: 10),
-                          Text('Fill out the form ➡️',
+                          Text('${AppLocalizations.of(context)!.form_text}➡️',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
                                 fontSize: 20,

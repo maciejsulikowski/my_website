@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart' as launcher;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({
@@ -39,7 +40,7 @@ class FooterWidget extends StatelessWidget {
             height: 50,
           ),
           Text(
-            '2024 All rights are reserved ©',
+            AppLocalizations.of(context)!.rights,
             style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 20),
           ),
         ],

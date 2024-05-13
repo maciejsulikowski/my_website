@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutAppSecondWidgetContainer extends StatefulWidget {
   const AboutAppSecondWidgetContainer({
@@ -81,7 +82,7 @@ class _AboutAppSecondWidgetContainerState
               children: [
                 Expanded(
                   child: Text(
-                    '''My dream is to create the best possible value for people and improve their lives. Thanks to Flutter, I know this is possible and I want to become a master in this area. In contrast, my current goal is to get my first job as a junior.''',
+                    AppLocalizations.of(context)!.help_text,
                     style: GoogleFonts.aBeeZee(
                         color: Colors.black,
                         fontSize: 24,

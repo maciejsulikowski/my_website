@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SubjectTextField extends StatelessWidget {
   const SubjectTextField({
     required this.subjectController,
@@ -39,9 +39,9 @@ class SubjectTextField extends StatelessWidget {
             child: TextField(
               controller: subjectController,
               style: GoogleFonts.aBeeZee(fontSize: 16),
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Subject...',
+                hintText: AppLocalizations.of(context)!.subject,
               ),
             ),
           ),

@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutAppWidget extends StatefulWidget {
   const AboutAppWidget({
@@ -17,7 +18,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
     with TickerProviderStateMixin {
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
-  late final ScrollController _scrollController;
+  
   double pixels = 0.0;
 
   late final Animation<double> _animation = CurvedAnimation(
@@ -73,7 +74,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                   children: [
                     Expanded(
                       child: Text(
-                        '''I am 24 years old IT student and in my programming journey, I have already created 4 applications and 1 website in Flutter, of which I have already published 3 applications in the Google Play Store.''',
+                        AppLocalizations.of(context)!.i_am_student,
                         style: GoogleFonts.aBeeZee(
                             color: Colors.black,
                             fontSize: 24,

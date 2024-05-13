@@ -79,7 +79,7 @@ class _AppWidgetState extends State<AppWidget> {
                         offset: const Offset(0, 3),
                       )
                     ]),
-          height: 700,
+          height: 750,
           width: 500,
           child: Column(
             children: [

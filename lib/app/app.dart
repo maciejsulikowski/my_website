@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
-    locale = Locale('pl');
+    locale = const Locale('pl');
     super.initState();
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class SurnameTextField extends StatelessWidget {
   const SurnameTextField({
     required this.surnameController,
@@ -39,9 +39,9 @@ class SurnameTextField extends StatelessWidget {
             child: TextField(
               controller: surnameController,
               style: GoogleFonts.aBeeZee(fontSize: 16),
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
                 border: InputBorder.none,
-                hintText: 'Surname...',
+                hintText: AppLocalizations.of(context)!.surname,
               ),
             ),
           ),

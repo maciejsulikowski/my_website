@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NavigatorBar extends StatefulWidget {
   const NavigatorBar({
@@ -104,7 +105,7 @@ class _NavigatorBarState extends State<NavigatorBar> {
                       },
                       child: Center(
                           child: Text(
-                        'About me',
+                        AppLocalizations.of(context)!.about_me,
                         style: GoogleFonts.aBeeZee(
                             color: isSelected1 ? Colors.white : Colors.black,
                             fontSize: 24),
@@ -130,7 +131,7 @@ class _NavigatorBarState extends State<NavigatorBar> {
                       },
                       child: Center(
                           child: Text(
-                        'Portfolio',
+                        AppLocalizations.of(context)!.portfolio,
                         style: GoogleFonts.aBeeZee(
                             color: isSelected2 ? Colors.white : Colors.black,
                             fontSize: 24),
@@ -156,7 +157,7 @@ class _NavigatorBarState extends State<NavigatorBar> {
                       },
                       child: Center(
                           child: Text(
-                        'Contact',
+                        AppLocalizations.of(context)!.contact,
                         style: GoogleFonts.aBeeZee(
                             color: isSelected3 ? Colors.white : Colors.black,
                             fontSize: 24),
