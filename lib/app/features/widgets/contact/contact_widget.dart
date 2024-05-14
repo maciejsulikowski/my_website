@@ -56,8 +56,8 @@ class _ContactWidgetState extends State<ContactWidget>
     with TickerProviderStateMixin {
   void wrongMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
-       SnackBar(
-          behavior: SnackBarBehavior.floating,
+      SnackBar(
+          behavior: SnackBarBehavior.fixed,
           backgroundColor: Colors.red,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(30))),
@@ -77,11 +77,11 @@ class _ContactWidgetState extends State<ContactWidget>
 
   void wrongMessage2() {
     ScaffoldMessenger.of(context).showSnackBar(
-       SnackBar(
-          behavior: SnackBarBehavior.floating,
+      SnackBar(
+          behavior: SnackBarBehavior.fixed,
           backgroundColor: Colors.red,
           shape: const RoundedRectangleBorder(
-              borderRadius:  BorderRadius.all(Radius.circular(30))),
+              borderRadius: BorderRadius.all(Radius.circular(30))),
           content: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
@@ -98,8 +98,8 @@ class _ContactWidgetState extends State<ContactWidget>
 
   void correctMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
-       SnackBar(
-          behavior: SnackBarBehavior.floating,
+      SnackBar(
+          behavior: SnackBarBehavior.fixed,
           backgroundColor: Colors.green,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(30))),
@@ -278,8 +278,7 @@ class _ContactWidgetState extends State<ContactWidget>
                                     }
                                   },
                                   child: Text(
-                                    AppLocalizations.of(context)!
-                                        .send_message,
+                                    AppLocalizations.of(context)!.send_message,
                                     style: GoogleFonts.aBeeZee(
                                         color: isHovered
                                             ? Colors.white
