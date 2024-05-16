@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:url_launcher/url_launcher.dart' as launcher;
 
 class PersonalWidget extends StatefulWidget {
   const PersonalWidget({
@@ -19,7 +20,10 @@ class PersonalWidget extends StatefulWidget {
 }
 
 class _PersonalWidgetState extends State<PersonalWidget> {
-  bool isHovered = false;
+  bool isHoveredFirst = false;
+  bool isHoveredSecond = false;
+  final webSiteUri = Uri.parse(
+      'https://drive.google.com/file/d/1As9S5O8EOXsk1APjk2jRct4SWt3515Rw/view?usp=drive_link');
   @override
   Widget build(BuildContext context) {
     void scrollToSection(int sectionIndex) {
@@ -122,32 +126,70 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                 const SizedBox(
                   height: 20,
                 ),
-                MouseRegion(
-                  onEnter: (_) {
-                    setState(() {
-                      isHovered = true;
-                    });
-                  },
-                  onExit: (_) {
-                    setState(() {
-                      isHovered = false;
-                    });
-                  },
-                  child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            isHovered ? Colors.black : Colors.white,
-                      ),
-                      onPressed: () {
-                        scrollToSection(1);
+                Row(
+                  children: [
+                    MouseRegion(
+                      onEnter: (_) {
+                        setState(() {
+                          isHoveredFirst = true;
+                        });
                       },
-                      child: Text(
-                        AppLocalizations.of(context)!.who,
-                        style: GoogleFonts.aBeeZee(
-                            color: isHovered ? Colors.white : Colors.black,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
-                      )),
+                      onExit: (_) {
+                        setState(() {
+                          isHoveredFirst = false;
+                        });
+                      },
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                isHoveredFirst ? Colors.black : Colors.white,
+                          ),
+                          onPressed: () {
+                            scrollToSection(1);
+                          },
+                          child: Text(
+                            AppLocalizations.of(context)!.who,
+                            style: GoogleFonts.aBeeZee(
+                                color: isHoveredFirst
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    MouseRegion(
+                      onEnter: (_) {
+                        setState(() {
+                          isHoveredSecond = true;
+                        });
+                      },
+                      onExit: (_) {
+                        setState(() {
+                          isHoveredSecond = false;
+                        });
+                      },
+                      child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                isHoveredSecond ? Colors.black : Colors.white,
+                          ),
+                          onPressed: () {
+                            launcher.launchUrl(webSiteUri);
+                          },
+                          child: Text(
+                            AppLocalizations.of(context)!.my_cv,
+                            style: GoogleFonts.aBeeZee(
+                                color: isHoveredSecond
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold),
+                          )),
+                    ),
+                  ],
                 ),
               ],
             ),
