@@ -57,6 +57,7 @@ class _ContactWidgetState extends State<ContactWidget>
   void wrongMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+          padding: EdgeInsets.all(10),
           behavior: SnackBarBehavior.fixed,
           backgroundColor: Colors.red,
           shape: const RoundedRectangleBorder(
@@ -78,6 +79,7 @@ class _ContactWidgetState extends State<ContactWidget>
   void wrongMessage2() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+          padding: EdgeInsets.all(10),
           behavior: SnackBarBehavior.fixed,
           backgroundColor: Colors.red,
           shape: const RoundedRectangleBorder(
@@ -99,6 +101,7 @@ class _ContactWidgetState extends State<ContactWidget>
   void correctMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
+          padding: EdgeInsets.all(10),
           behavior: SnackBarBehavior.fixed,
           backgroundColor: Colors.green,
           shape: const RoundedRectangleBorder(

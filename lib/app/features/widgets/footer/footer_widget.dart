@@ -83,8 +83,9 @@ class _GitHubButtonState extends State<GitHubButton> {
           image: const AssetImage(
             'images/github.png',
           ),
-          width: isHovered ? 70 : 50,
-          height: isHovered ? 70 : 50,
+          color: isHovered ? Colors.black.withOpacity(0.5) : null,
+          width: 50,
+          height: 50,
         ),
       ),
     );
@@ -126,8 +127,9 @@ class _InstagramButtonState extends State<InstagramButton> {
           image: const AssetImage(
             'images/insta.png',
           ),
-          width: isHovered ? 70 : 50,
-          height: isHovered ? 70 : 50,
+          color: isHovered ? Colors.pink.withOpacity(0.5) : null,
+          width: 50,
+          height: 50,
         ),
       ),
     );
@@ -168,10 +170,11 @@ class _FacebookButtonState extends State<FacebookButton> {
         },
         child: Image(
           image: const AssetImage(
-            'images/fb.png',
+            'images/ffb.png',
           ),
-          width: isHovered ? 70 : 50,
-          height: isHovered ? 70 : 50,
+          color: isHovered ? Colors.blue.withOpacity(0.5) : null,
+          width: 50,
+          height: 50,
         ),
       ),
     );
@@ -212,10 +215,11 @@ class _LinekdInButtonState extends State<LinekdInButton> {
         },
         child: Image(
           image: const AssetImage(
-            'images/linkedin.png',
+            'images/linki.png',
           ),
-          width: isHovered ? 70 : 50,
-          height: isHovered ? 70 : 50,
+          color: isHovered ? Colors.blue.withOpacity(0.5) : null,
+          width: 50,
+          height: 50,
         ),
       ),
     );

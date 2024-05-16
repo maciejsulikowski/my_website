@@ -103,6 +103,13 @@ class _PersonalWidgetState extends State<PersonalWidget> {
                               fontSize: 24,
                               fontWeight: FontWeight.bold),
                         ),
+                        TyperAnimatedText(
+                          'Salesman',
+                          textStyle: GoogleFonts.aBeeZee(
+                              color: Colors.black,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ],
                     ),
                   ],

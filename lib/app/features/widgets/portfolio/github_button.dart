@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
@@ -38,8 +37,9 @@ class _GitHubButtonState extends State<GitHubButton> {
           image: const AssetImage(
             'images/github.png',
           ),
-          width: isHovered ? 70 : 50,
-          height: isHovered ? 70 : 50,
+          color: isHovered ? Colors.black.withOpacity(0.5) : null,
+          width: 50,
+          height: 50,
         ),
       ),
     );
