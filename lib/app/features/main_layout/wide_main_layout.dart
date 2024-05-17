@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
+import 'package:my_website/app/features/widgets/about_me/wide_personal_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
 
 import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
@@ -92,7 +93,7 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                     key: widget.sectionKeys[0],
                     height: 50,
                   ),
-                  PersonalWidget(
+                  WidePersonalWidget(
                       listOfKeys: widget.sectionKeys,
                       scrollController: widget._scrollController),
                   const SizedBox(
