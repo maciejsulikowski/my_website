@@ -1,24 +1,69 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
+
+import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
+import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
 import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
 import 'package:my_website/app/features/widgets/side_bar.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class MainLayout extends StatelessWidget {
-  MainLayout({
+class UltraWideMainLayout extends StatefulWidget {
+  UltraWideMainLayout({
     super.key,
-  });
+    required this.setLocale,
+    required this.sectionKeys,
+    required ScrollController scrollController,
+  }) : _scrollController = scrollController;
 
-  final ScrollController scrollController = ScrollController();
-  final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
+  final Function(Locale) setLocale;
+  final ScrollController _scrollController;
+  final List<GlobalKey> sectionKeys;
+
+  @override
+  State<UltraWideMainLayout> createState() => _UltraWideMainLayoutState();
+}
+
+class _UltraWideMainLayoutState extends State<UltraWideMainLayout> {
+  // final ScrollController scrollController = ScrollController();
+
+  // final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 40),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SecondLanguageActionButton(
+                  setLocale: widget.setLocale,
+                ),
+              ],
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              UpArrowFloatingActionButton(
+                listOfKeys: widget.sectionKeys,
+                scrollController: widget._scrollController,
+              ),
+            ],
+          ),
+        ],
+      ),
       body: Container(
         decoration: BoxDecoration(
             gradient: const LinearGradient(
@@ -40,21 +85,22 @@ class MainLayout extends StatelessWidget {
         child: Stack(
           children: [
             SingleChildScrollView(
-              controller: scrollController,
+              controller: widget._scrollController,
               child: Column(
                 children: [
-                  const SizedBox(
+                  SizedBox(
+                    key: widget.sectionKeys[0],
                     height: 50,
                   ),
                   PersonalWidget(
-                      listOfKeys: listOfKeys,
-                      scrollController: scrollController),
+                      listOfKeys: widget.sectionKeys,
+                      scrollController: widget._scrollController),
                   const SizedBox(
                     height: 50,
                   ),
                   SideBar(
-                    text: 'About Me',
-                    key: listOfKeys[1],
+                    text: AppLocalizations.of(context)!.about_me,
+                    key: widget.sectionKeys[1],
                   ),
                   const SizedBox(height: 50),
                   const AboutAppWidget(),
@@ -62,8 +108,8 @@ class MainLayout extends StatelessWidget {
                   const AboutAppWidgetSecond(),
                   const SizedBox(height: 50),
                   SideBar(
-                    text: 'Portfolio',
-                    key: listOfKeys[2],
+                    text: AppLocalizations.of(context)!.portfolio,
+                    key: widget.sectionKeys[2],
                   ),
                   const SizedBox(height: 50),
                   PortfolioWidget(),
@@ -71,8 +117,8 @@ class MainLayout extends StatelessWidget {
                     height: 50,
                   ),
                   SideBar(
-                    text: 'Contact',
-                    key: listOfKeys[3],
+                    text: AppLocalizations.of(context)!.contact,
+                    key: widget.sectionKeys[3],
                   ),
                   const SizedBox(
                     height: 50,
@@ -90,7 +136,7 @@ class MainLayout extends StatelessWidget {
               right: 0,
               top: 0,
               child: NavigatorBar(
-                  listOfKeys: listOfKeys, scrollController: scrollController),
+                  listOfKeys: widget.sectionKeys, scrollController: widget._scrollController),
             ),
           ],
         ),
