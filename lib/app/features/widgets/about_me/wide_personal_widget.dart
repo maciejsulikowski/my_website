@@ -45,7 +45,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
       children: [
         SizedBox(
           height: 700,
-          width: 600,
+          width: 500,
           child: Padding(
             padding: const EdgeInsets.only(top: 180.0, left: 20, right: 20),
             child: Column(
@@ -60,8 +60,8 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                     ),
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 20),
-                      width: 50,
-                      height: 50,
+                      width: 40,
+                      height: 40,
                       child: Lottie.asset('images/heyAnimation.json'),
                     ),
                   ],
@@ -69,7 +69,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                 const SizedBox(height: 20),
                 Text(
                   '${AppLocalizations.of(context)!.my_name} Maciej Sulikowski',
-                  style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 40),
+                  style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 30),
                 ),
                 const SizedBox(height: 20),
                 Row(
@@ -77,7 +77,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                     Text(
                       AppLocalizations.of(context)!.one,
                       style: GoogleFonts.aBeeZee(
-                          color: Colors.black, fontSize: 24),
+                          color: Colors.black, fontSize: 20),
                     ),
                     const SizedBox(
                       width: 10,
@@ -90,28 +90,28 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                           'Flutter Developer',
                           textStyle: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         TyperAnimatedText(
                           'Mobile Developer',
                           textStyle: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         TyperAnimatedText(
                           'Web Developer',
                           textStyle: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                         TyperAnimatedText(
                           'Salesman',
                           textStyle: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                       ],
@@ -121,7 +121,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                 const SizedBox(height: 20),
                 Text(
                   AppLocalizations.of(context)!.guy,
-                  style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 18),
+                  style: GoogleFonts.aBeeZee(color: Colors.black, fontSize: 16),
                 ),
                 const SizedBox(
                   height: 20,
@@ -153,7 +153,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                                 color: isHoveredFirst
                                     ? Colors.white
                                     : Colors.black,
-                                fontSize: 24,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           )),
                     ),
@@ -185,7 +185,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                                 color: isHoveredSecond
                                     ? Colors.white
                                     : Colors.black,
-                                fontSize: 24,
+                                fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           )),
                     ),
@@ -195,11 +195,10 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
             ),
           ),
         ),
-        
         Container(
           margin: const EdgeInsets.only(top: 50),
           height: 500,
-          width: 600,
+          width: 400,
           child: const Image(
             image: AssetImage('images/eagle.jpg'),
             width: 80,

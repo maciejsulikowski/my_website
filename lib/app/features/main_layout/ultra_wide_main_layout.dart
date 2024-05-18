@@ -32,9 +32,6 @@ class UltraWideMainLayout extends StatefulWidget {
 }
 
 class _UltraWideMainLayoutState extends State<UltraWideMainLayout> {
-  // final ScrollController scrollController = ScrollController();
-
-  // final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {

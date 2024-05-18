@@ -33,9 +33,6 @@ class WideMainLayout extends StatefulWidget {
 }
 
 class _WideMainLayoutState extends State<WideMainLayout> {
-  // final ScrollController scrollController = ScrollController();
-
-  // final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -132,14 +129,14 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                 ],
               ),
             ),
-            // Positioned(
-            //   left: 0,
-            //   right: 0,
-            //   top: 0,
-            //   child: NavigatorBar(
-            //       listOfKeys: widget.sectionKeys,
-            //       scrollController: widget._scrollController),
-            // ),
+            Positioned(
+              left: 0,
+              right: 0,
+              top: 0,
+              child: NavigatorBar(
+                  listOfKeys: widget.sectionKeys,
+                  scrollController: widget._scrollController),
+            ),
           ],
         ),
       ),

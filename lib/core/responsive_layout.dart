@@ -19,7 +19,7 @@ class ResponsiveLayout extends StatelessWidget {
         final maxWidth = constraints.maxWidth;
         if (maxWidth > 1260) {
           return ultrawide;
-        } else if (maxWidth > 750) {
+        } else if (maxWidth > 900) {
           return wide;
         } else {
           return narrow;

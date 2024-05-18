@@ -32,9 +32,6 @@ class NarrowMainLayout extends StatefulWidget {
 }
 
 class _NarrowMainLayoutState extends State<NarrowMainLayout> {
-  // final ScrollController scrollController = ScrollController();
-
-  // final List<GlobalKey> listOfKeys = List.generate(4, (_) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
