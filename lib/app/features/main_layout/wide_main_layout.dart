@@ -4,8 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_wide.dart';
 import 'package:my_website/app/features/widgets/about_me/wide_personal_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
+import 'package:my_website/app/features/widgets/contact/contact_widget_wide.dart';
 
 import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
 import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
@@ -13,6 +15,7 @@ import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
+import 'package:my_website/app/features/widgets/portfolio/portfolio_widget_wide.dart';
 import 'package:my_website/app/features/widgets/side_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -103,14 +106,14 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                   const SizedBox(height: 50),
                   const AboutAppWidget(),
                   const SizedBox(height: 50),
-                  const AboutAppWidgetSecond(),
+                  const AboutAppWidgetSecondWide(),
                   const SizedBox(height: 50),
                   SideBar(
                     text: AppLocalizations.of(context)!.portfolio,
                     key: widget.sectionKeys[2],
                   ),
                   const SizedBox(height: 50),
-                  PortfolioWidget(),
+                  PortfolioWidgetWide(),
                   const SizedBox(
                     height: 50,
                   ),
@@ -121,7 +124,7 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                   const SizedBox(
                     height: 50,
                   ),
-                  const ContactWidget(),
+                  const ContactWidgetWide(),
                   const SizedBox(
                     height: 50,
                   ),

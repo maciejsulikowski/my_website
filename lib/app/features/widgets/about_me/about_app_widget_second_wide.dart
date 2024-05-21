@@ -3,11 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_container.dart';
 import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/advantage_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/advantage_widget_wide.dart';
 import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AboutAppWidgetSecond extends StatelessWidget {
-  const AboutAppWidgetSecond({
+class AboutAppWidgetSecondWide extends StatelessWidget {
+  const AboutAppWidgetSecondWide({
     super.key,
   });
 
@@ -32,7 +33,7 @@ class AboutAppWidgetSecond extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AdvantageWidget(
+            AdvantageWidgetWide(
               text: AppLocalizations.of(context)!.mobile,
               image: 'images/mobile.png',
               secondText: AppLocalizations.of(context)!.flutter_mobile,
@@ -40,7 +41,7 @@ class AboutAppWidgetSecond extends StatelessWidget {
             SizedBox(
               width: 30,
             ),
-            AdvantageWidget(
+            AdvantageWidgetWide(
               text: AppLocalizations.of(context)!.web,
               image: 'images/web.png',
               secondText: AppLocalizations.of(context)!.flutter_web,
@@ -48,7 +49,7 @@ class AboutAppWidgetSecond extends StatelessWidget {
             SizedBox(
               width: 30,
             ),
-            AdvantageWidget(
+            AdvantageWidgetWide(
               text: AppLocalizations.of(context)!.ux,
               image: 'images/ux.png',
               secondText: AppLocalizations.of(context)!.flutter_ux,

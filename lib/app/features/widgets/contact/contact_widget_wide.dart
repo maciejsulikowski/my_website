@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_website/app/features/widgets/contact/left_contact_wide.dart';
 import 'package:my_website/app/features/widgets/contact/left_contact_widget.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_website/app/features/widgets/text_fields/email_widget.dart';
@@ -11,13 +12,13 @@ import 'package:my_website/app/features/widgets/text_fields/surname_widget.dart'
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ContactWidget extends StatefulWidget {
-  const ContactWidget({
+class ContactWidgetWide extends StatefulWidget {
+  const ContactWidgetWide({
     super.key,
   });
 
   @override
-  State<ContactWidget> createState() => _ContactWidgetState();
+  State<ContactWidgetWide> createState() => _ContactWidgetWideState();
 }
 
 bool isHovered = false;
@@ -52,7 +53,7 @@ Future sendEmail() async {
   return response.statusCode;
 }
 
-class _ContactWidgetState extends State<ContactWidget>
+class _ContactWidgetWideState extends State<ContactWidgetWide>
     with TickerProviderStateMixin {
   void wrongMessage() {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -150,7 +151,7 @@ class _ContactWidgetState extends State<ContactWidget>
     return Column(
       children: [
         VisibilityDetector(
-          key: const Key('contactWidget'),
+          key: const Key('contactWidgetWide'),
           onVisibilityChanged: (visibilityInfo) {
             if (visibilityInfo.visibleFraction == 1) {
               _animationController.forward();
@@ -182,7 +183,7 @@ class _ContactWidgetState extends State<ContactWidget>
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const LeftContactWidget(),
+            const LeftContactWidgetWide(),
             VisibilityDetector(
               key: const Key('RightContactContainer'),
               onVisibilityChanged: (visibilityInfo) {
@@ -199,7 +200,7 @@ class _ContactWidgetState extends State<ContactWidget>
                     position: _rightAnimation,
                     child: Container(
                       height: 500,
-                      width: 500,
+                      width: 400,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         gradient: const LinearGradient(

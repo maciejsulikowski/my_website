@@ -4,11 +4,13 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
+import 'package:my_website/app/features/widgets/about_me/narrow_personal_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
 
 import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
 import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
 import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
+import 'package:my_website/app/features/widgets/navigation/narrow_navigaton_bar.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
@@ -16,7 +18,7 @@ import 'package:my_website/app/features/widgets/side_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class NarrowMainLayout extends StatefulWidget {
-  NarrowMainLayout({
+  const NarrowMainLayout({
     super.key,
     required this.setLocale,
     required this.sectionKeys,
@@ -32,10 +34,27 @@ class NarrowMainLayout extends StatefulWidget {
 }
 
 class _NarrowMainLayoutState extends State<NarrowMainLayout> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black87,
+        iconTheme: const IconThemeData(color: Colors.white),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(Icons.list_rounded));
+          },
+        ),
+      ),
+      drawer: Drawer(
+        child: NarrowNavigatorBar(
+            listOfKeys: widget.sectionKeys,
+            scrollController: widget._scrollController),
+      ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -89,7 +108,7 @@ class _NarrowMainLayoutState extends State<NarrowMainLayout> {
                     key: widget.sectionKeys[0],
                     height: 50,
                   ),
-                  PersonalWidget(
+                  NarrowPersonalWidget(
                       listOfKeys: widget.sectionKeys,
                       scrollController: widget._scrollController),
                   const SizedBox(
@@ -127,14 +146,6 @@ class _NarrowMainLayoutState extends State<NarrowMainLayout> {
                   const FooterWidget(),
                 ],
               ),
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              child: NavigatorBar(
-                  listOfKeys: widget.sectionKeys,
-                  scrollController: widget._scrollController),
             ),
           ],
         ),
