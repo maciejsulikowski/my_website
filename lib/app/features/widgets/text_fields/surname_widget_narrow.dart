@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class MessageTextField extends StatelessWidget {
-  const MessageTextField({
-    required this.messageController,
+class SurnameTextFieldNarrow extends StatelessWidget {
+  const SurnameTextFieldNarrow({
+    required this.surnameController,
     super.key,
   });
 
-  final TextEditingController messageController;
+  final TextEditingController surnameController;
 
   @override
   Widget build(BuildContext context) {
@@ -38,12 +38,11 @@ class MessageTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
-              controller: messageController,
-              maxLines: null,
+              controller: surnameController,
               style: GoogleFonts.aBeeZee(fontSize: 14),
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: AppLocalizations.of(context)!.mess,
+                hintText: AppLocalizations.of(context)!.surname,
               ),
             ),
           ),

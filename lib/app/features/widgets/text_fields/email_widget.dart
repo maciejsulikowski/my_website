@@ -38,7 +38,7 @@ class EmailTextField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
               controller: emailController,
-              style: GoogleFonts.aBeeZee(fontSize: 16),
+              style: GoogleFonts.aBeeZee(fontSize: 14),
               decoration: const InputDecoration(
                 border: InputBorder.none,
                 hintText: 'E-mail...',

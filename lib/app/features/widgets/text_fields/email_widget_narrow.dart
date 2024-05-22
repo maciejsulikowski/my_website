@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class MessageTextField extends StatelessWidget {
-  const MessageTextField({
-    required this.messageController,
+class EmailTextFieldNarrow extends StatelessWidget {
+  const EmailTextFieldNarrow({
+    required this.emailController,
     super.key,
   });
 
-  final TextEditingController messageController;
+  final TextEditingController emailController;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(8),
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(8),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
@@ -38,12 +38,11 @@ class MessageTextField extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
-              controller: messageController,
-              maxLines: null,
+              controller: emailController,
               style: GoogleFonts.aBeeZee(fontSize: 14),
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 border: InputBorder.none,
-                hintText: AppLocalizations.of(context)!.mess,
+                hintText: 'E-mail...',
               ),
             ),
           ),

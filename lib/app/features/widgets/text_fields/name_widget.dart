@@ -39,7 +39,7 @@ class NameTextField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
               controller: nameController,
-              style: GoogleFonts.aBeeZee(fontSize: 16),
+              style: GoogleFonts.aBeeZee(fontSize: 14),
               decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: AppLocalizations.of(context)!.name,
