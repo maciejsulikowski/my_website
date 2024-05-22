@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 class MessageTextField extends StatelessWidget {
   const MessageTextField({
     required this.messageController,
@@ -40,8 +39,8 @@ class MessageTextField extends StatelessWidget {
             child: TextField(
               controller: messageController,
               maxLines: null,
-              style: GoogleFonts.aBeeZee(fontSize: 14),
-              decoration: InputDecoration(
+              style: GoogleFonts.aBeeZee(fontSize: 16),
+              decoration:  InputDecoration(
                 border: InputBorder.none,
                 hintText: AppLocalizations.of(context)!.mess,
               ),

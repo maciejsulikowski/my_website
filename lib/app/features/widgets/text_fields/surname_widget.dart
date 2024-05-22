@@ -38,7 +38,7 @@ class SurnameTextField extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: TextField(
               controller: surnameController,
-              style: GoogleFonts.aBeeZee(fontSize: 14),
+              style: GoogleFonts.aBeeZee(fontSize: 16),
               decoration:  InputDecoration(
                 border: InputBorder.none,
                 hintText: AppLocalizations.of(context)!.surname,

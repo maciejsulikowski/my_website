@@ -32,7 +32,6 @@ class UltraWideMainLayout extends StatefulWidget {
 }
 
 class _UltraWideMainLayoutState extends State<UltraWideMainLayout> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,7 +86,6 @@ class _UltraWideMainLayoutState extends State<UltraWideMainLayout> {
                 children: [
                   SizedBox(
                     key: widget.sectionKeys[0],
-                    height: 50,
                   ),
                   PersonalWidget(
                       listOfKeys: widget.sectionKeys,
@@ -133,7 +131,8 @@ class _UltraWideMainLayoutState extends State<UltraWideMainLayout> {
               right: 0,
               top: 0,
               child: NavigatorBar(
-                  listOfKeys: widget.sectionKeys, scrollController: widget._scrollController),
+                  listOfKeys: widget.sectionKeys,
+                  scrollController: widget._scrollController),
             ),
           ],
         ),

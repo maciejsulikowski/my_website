@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:url_launcher/url_launcher.dart' as launcher;
 
 class NarrowPersonalWidget extends StatefulWidget {
@@ -44,7 +45,7 @@ class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: 380,
+          height: 450,
           width: 500,
           child: Padding(
             padding: const EdgeInsets.only(top: 100.0, left: 20, right: 20),
@@ -189,6 +190,26 @@ class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget> {
                                 fontWeight: FontWeight.bold),
                           )),
                     ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    GitHubButton(),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    InstagramButton(),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    FacebookButton(),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    LinekdInButton(),
                   ],
                 ),
               ],

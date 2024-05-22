@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:url_launcher/url_launcher.dart' as launcher;
 
 class WidePersonalWidget extends StatefulWidget {
@@ -189,6 +190,26 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                                 fontWeight: FontWeight.bold),
                           )),
                     ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    GitHubButton(),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InstagramButton(),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    FacebookButton(),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    LinekdInButton(),
                   ],
                 ),
               ],
