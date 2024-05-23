@@ -33,7 +33,7 @@ class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget> {
               as RenderBox;
       final position = renderBox.localToGlobal(Offset.zero).dy;
       final currentOffset = widget.scrollController.offset;
-      final targetPosition = position + currentOffset + 30;
+      final targetPosition = position + currentOffset + 75;
       widget.scrollController.animateTo(
         targetPosition,
         duration: const Duration(milliseconds: 500),

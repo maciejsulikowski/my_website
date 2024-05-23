@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
@@ -18,7 +19,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
     with TickerProviderStateMixin {
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
-  
+
   double pixels = 0.0;
 
   late final Animation<double> _animation = CurvedAnimation(
@@ -70,16 +71,29 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                       )
                     ]),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Expanded(
-                      child: Text(
-                        AppLocalizations.of(context)!.i_am_student,
-                        style: GoogleFonts.aBeeZee(
-                            color: Colors.black,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
-                      ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          width: 900,
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student}',
+                            style: GoogleFonts.aBeeZee(
+                              color: Colors.black,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          '-${AppLocalizations.of(context)!.i_am_student_2}',
+                          style: GoogleFonts.aBeeZee(
+                              color: Colors.black,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
                     ),
                     Text(
                       '👋',
