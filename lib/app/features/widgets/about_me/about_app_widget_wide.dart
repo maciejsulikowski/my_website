@@ -6,16 +6,16 @@ import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AboutAppWidget extends StatefulWidget {
-  const AboutAppWidget({
+class AboutAppWidgetWide extends StatefulWidget {
+  const AboutAppWidgetWide({
     super.key,
   });
 
   @override
-  State<AboutAppWidget> createState() => _AboutAppWidgetState();
+  State<AboutAppWidgetWide> createState() => _AboutAppWidgetWideState();
 }
 
-class _AboutAppWidgetState extends State<AboutAppWidget>
+class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
     with TickerProviderStateMixin {
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
@@ -52,7 +52,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
             Container(
                 padding: const EdgeInsets.all(20),
                 height: 300,
-                width: 1000,
+                width: 900,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
@@ -78,7 +78,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                         Text(
                           '-${AppLocalizations.of(context)!.i_am_student}',
                           style: GoogleFonts.aBeeZee(
-                            fontSize: 24,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -95,7 +95,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                           '-${AppLocalizations.of(context)!.i_am_student_1}',
                           style: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 22,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(
@@ -112,7 +112,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                           '-${AppLocalizations.of(context)!.i_am_student_2}',
                           style: GoogleFonts.aBeeZee(
                             color: Colors.black,
-                            fontSize: 24,
+                            fontSize: 22,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -129,7 +129,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                           '-${AppLocalizations.of(context)!.i_am_student_3}',
                           style: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 22,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(
@@ -145,7 +145,7 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                           '-${AppLocalizations.of(context)!.i_am_student_4}',
                           style: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 24,
+                              fontSize: 22,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(

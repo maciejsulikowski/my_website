@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/narrow_personal_widget.dart';
@@ -122,7 +123,7 @@ class _NarrowMainLayoutState extends State<NarrowMainLayout> {
                     key: widget.sectionKeys[1],
                   ),
                   const SizedBox(height: 50),
-                  const AboutAppWidget(),
+                  const AboutAppWidgetNarrow(),
                   const SizedBox(height: 50),
                   const AboutAppWidgetSecondNarrow(),
                   const SizedBox(height: 50),

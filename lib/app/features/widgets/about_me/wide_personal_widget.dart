@@ -198,15 +198,15 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
                 Row(
                   children: [
                     GitHubButton(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     InstagramButton(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     FacebookButton(),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
                     LinekdInButton(),

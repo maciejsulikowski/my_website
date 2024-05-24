@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -6,16 +7,16 @@ import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AboutAppWidget extends StatefulWidget {
-  const AboutAppWidget({
+class AboutAppWidgetNarrow extends StatefulWidget {
+  const AboutAppWidgetNarrow({
     super.key,
   });
 
   @override
-  State<AboutAppWidget> createState() => _AboutAppWidgetState();
+  State<AboutAppWidgetNarrow> createState() => _AboutAppWidgetNarrowState();
 }
 
-class _AboutAppWidgetState extends State<AboutAppWidget>
+class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
     with TickerProviderStateMixin {
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
@@ -51,8 +52,8 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
           children: [
             Container(
                 padding: const EdgeInsets.all(20),
-                height: 300,
-                width: 1000,
+                height: 450,
+                width: 700,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
@@ -75,11 +76,13 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                   children: [
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student}',
-                          style: GoogleFonts.aBeeZee(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student}',
+                            style: GoogleFonts.aBeeZee(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -89,14 +92,19 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_1}',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_1}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 40,
@@ -106,14 +114,20 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_2}',
-                          style: GoogleFonts.aBeeZee(
-                            color: Colors.black,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_2}',
+                            style: GoogleFonts.aBeeZee(
+                              color: Colors.black,
+                              fontSize: 22,
+                              fontWeight: FontWeight.
+                              bold,
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -123,14 +137,19 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_3}',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_3}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 40,
@@ -139,14 +158,19 @@ class _AboutAppWidgetState extends State<AboutAppWidget>
                         ),
                       ],
                     ),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_4}',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_4}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 40,

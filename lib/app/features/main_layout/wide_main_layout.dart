@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_wide.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_wide.dart';
 import 'package:my_website/app/features/widgets/about_me/wide_personal_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget_wide.dart';
@@ -36,7 +37,6 @@ class WideMainLayout extends StatefulWidget {
 }
 
 class _WideMainLayoutState extends State<WideMainLayout> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +104,7 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                     key: widget.sectionKeys[1],
                   ),
                   const SizedBox(height: 50),
-                  const AboutAppWidget(),
+                  const AboutAppWidgetWide(),
                   const SizedBox(height: 50),
                   const AboutAppWidgetSecondWide(),
                   const SizedBox(height: 50),
