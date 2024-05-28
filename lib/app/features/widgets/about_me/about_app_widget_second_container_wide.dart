@@ -3,18 +3,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AboutAppSecondWidgetContainer extends StatefulWidget {
-  const AboutAppSecondWidgetContainer({
+class AboutAppSecondWidgetContainerWide extends StatefulWidget {
+  const AboutAppSecondWidgetContainerWide({
     super.key,
   });
 
   @override
-  State<AboutAppSecondWidgetContainer> createState() =>
-      _AboutAppSecondWidgetContainerState();
+  State<AboutAppSecondWidgetContainerWide> createState() =>
+      _AboutAppSecondWidgetContainerWideState();
 }
 
-class _AboutAppSecondWidgetContainerState
-    extends State<AboutAppSecondWidgetContainer> with TickerProviderStateMixin {
+class _AboutAppSecondWidgetContainerWideState
+    extends State<AboutAppSecondWidgetContainerWide>
+    with TickerProviderStateMixin {
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
   late final ScrollController _scrollController;

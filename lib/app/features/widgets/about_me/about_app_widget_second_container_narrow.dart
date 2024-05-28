@@ -1,20 +1,23 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AboutAppSecondWidgetContainer extends StatefulWidget {
-  const AboutAppSecondWidgetContainer({
+class AboutAppSecondWidgetContainerNarrow extends StatefulWidget {
+  const AboutAppSecondWidgetContainerNarrow({
     super.key,
   });
 
   @override
-  State<AboutAppSecondWidgetContainer> createState() =>
-      _AboutAppSecondWidgetContainerState();
+  State<AboutAppSecondWidgetContainerNarrow> createState() =>
+      _AboutAppSecondWidgetContainerNarrowState();
 }
 
-class _AboutAppSecondWidgetContainerState
-    extends State<AboutAppSecondWidgetContainer> with TickerProviderStateMixin {
+class _AboutAppSecondWidgetContainerNarrowState
+    extends State<AboutAppSecondWidgetContainerNarrow>
+    with TickerProviderStateMixin {
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
   late final ScrollController _scrollController;
@@ -58,8 +61,8 @@ class _AboutAppSecondWidgetContainerState
         opacity: _animation,
         child: Container(
             padding: const EdgeInsets.all(20),
-            height: 200,
-            width: 850,
+            height: 400,
+            width: 700,
             decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [
@@ -82,11 +85,13 @@ class _AboutAppSecondWidgetContainerState
               children: [
                 Row(
                   children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_1}',
-                      style: GoogleFonts.aBeeZee(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                    Flexible(
+                      child: Text(
+                        '-${AppLocalizations.of(context)!.help_1}',
+                        style: GoogleFonts.aBeeZee(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -99,14 +104,19 @@ class _AboutAppSecondWidgetContainerState
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_2}',
-                      style: GoogleFonts.aBeeZee(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
+                    Flexible(
+                      child: Text(
+                        '-${AppLocalizations.of(context)!.help_2}',
+                        style: GoogleFonts.aBeeZee(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                     const SizedBox(
                       width: 10,
@@ -118,14 +128,19 @@ class _AboutAppSecondWidgetContainerState
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_3}',
-                      style: GoogleFonts.aBeeZee(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                    Flexible(
+                      child: Text(
+                        '-${AppLocalizations.of(context)!.help_3}',
+                        style: GoogleFonts.aBeeZee(
+                          color: Colors.black,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -138,14 +153,19 @@ class _AboutAppSecondWidgetContainerState
                     ),
                   ],
                 ),
+                const SizedBox(
+                  height: 10,
+                ),
                 Row(
                   children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_4}',
-                      style: GoogleFonts.aBeeZee(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
+                    Flexible(
+                      child: Text(
+                        '-${AppLocalizations.of(context)!.help_4}',
+                        style: GoogleFonts.aBeeZee(
+                            color: Colors.black,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                     const SizedBox(
                       width: 10,

@@ -51,7 +51,7 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
           children: [
             Container(
                 padding: const EdgeInsets.all(20),
-                height: 300,
+                height: 250,
                 width: 900,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(

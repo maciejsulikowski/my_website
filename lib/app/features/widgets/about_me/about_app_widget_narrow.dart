@@ -125,8 +125,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                             style: GoogleFonts.aBeeZee(
                               color: Colors.black,
                               fontSize: 22,
-                              fontWeight: FontWeight.
-                              bold,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ),

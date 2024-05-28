@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_container.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_container_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/advantage_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/advantage_widget_wide.dart';
@@ -67,7 +68,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 100),
-        const AboutAppSecondWidgetContainer(),
+        const AboutAppSecondWidgetContainerNarrow(),
       ],
     );
   }
