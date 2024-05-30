@@ -222,9 +222,9 @@ class _PersonalWidgetState extends State<PersonalWidget> {
           height: 500,
           width: 600,
           child: const Image(
-            image: AssetImage('images/eagle.jpg'),
-            width: 80,
-            height: 80,
+            image: AssetImage('images/maj.png'),
+            width: 500,
+            height: 500,
           ),
         ),
       ],

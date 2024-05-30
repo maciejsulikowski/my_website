@@ -221,7 +221,7 @@ class _WidePersonalWidgetState extends State<WidePersonalWidget> {
           height: 500,
           width: 400,
           child: const Image(
-            image: AssetImage('images/eagle.jpg'),
+            image: AssetImage('images/maj.png'),
             width: 80,
             height: 80,
           ),

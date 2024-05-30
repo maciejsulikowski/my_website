@@ -221,7 +221,7 @@ class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget> {
           height: 500,
           width: 400,
           child: const Image(
-            image: AssetImage('images/eagle.jpg'),
+            image: AssetImage('images/maj.png'),
             width: 80,
             height: 80,
           ),
