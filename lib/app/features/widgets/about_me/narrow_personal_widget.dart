@@ -20,9 +20,36 @@ class NarrowPersonalWidget extends StatefulWidget {
   State<NarrowPersonalWidget> createState() => _NarrowPersonalWidgetState();
 }
 
-class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget> {
+class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget>
+    with TickerProviderStateMixin {
   bool isHoveredFirst = false;
   bool isHoveredSecond = false;
+  late AnimationController animationController;
+  late Animation<double> animation;
+  @override
+  void initState() {
+    super.initState();
+    animationController = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+
+    animation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: animationController,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
   final webSiteUri = Uri.parse(
       'https://drive.google.com/file/d/1As9S5O8EOXsk1APjk2jRct4SWt3515Rw/view?usp=drive_link');
   @override
@@ -220,10 +247,13 @@ class _NarrowPersonalWidgetState extends State<NarrowPersonalWidget> {
           margin: const EdgeInsets.only(top: 50),
           height: 500,
           width: 400,
-          child: const Image(
-            image: AssetImage('images/maj.png'),
-            width: 80,
-            height: 80,
+          child: ScaleTransition(
+            scale: animation,
+            child: const Image(
+              image: AssetImage('images/maj.png'),
+              width: 80,
+              height: 80,
+            ),
           ),
         ),
       ],
