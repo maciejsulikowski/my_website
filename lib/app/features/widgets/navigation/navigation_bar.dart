@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
 
 class NavigatorBar extends StatefulWidget {
   const NavigatorBar({
@@ -78,10 +80,15 @@ class _NavigatorBarState extends State<NavigatorBar> {
       ),
       child: Row(
         children: [
-          const Image(
-            image: AssetImage('images/eagle.jpg'),
-            width: 80,
-            height: 80,
+          InkWell(
+            onTap: () {
+              html.window.location.reload();
+            },
+            child: const Image(
+              image: AssetImage('images/eagle.jpg'),
+              width: 80,
+              height: 80,
+            ),
           ),
           Expanded(
             child: Row(
