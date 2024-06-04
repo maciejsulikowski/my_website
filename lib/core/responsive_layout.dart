@@ -6,11 +6,13 @@ class ResponsiveLayout extends StatelessWidget {
     required this.ultrawide,
     required this.wide,
     required this.narrow,
+    required this.ultranarrow,
   });
 
   final Widget ultrawide;
   final Widget wide;
   final Widget narrow;
+  final Widget ultranarrow;
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,10 @@ class ResponsiveLayout extends StatelessWidget {
           return ultrawide;
         } else if (maxWidth > 900) {
           return wide;
-        } else {
+        } else if (maxWidth > 500) {
           return narrow;
+        } else {
+          return ultranarrow;
         }
       },
     );

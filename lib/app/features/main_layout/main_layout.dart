@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/main_layout/narrow_main_layout.dart';
+import 'package:my_website/app/features/main_layout/ultra_narrow_main_layout.dart';
 import 'package:my_website/app/features/main_layout/ultra_wide_main_layout.dart';
 import 'package:my_website/app/features/main_layout/wide_main_layout.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
@@ -50,6 +51,11 @@ class _MainLayoutState extends State<MainLayout> {
         sectionKeys: sectionKeys,
       ),
       narrow: NarrowMainLayout(
+        setLocale: widget.setLocale,
+        scrollController: _scrollController,
+        sectionKeys: sectionKeys,
+      ),
+      ultranarrow: UltraNarrowMainLayout(
         setLocale: widget.setLocale,
         scrollController: _scrollController,
         sectionKeys: sectionKeys,

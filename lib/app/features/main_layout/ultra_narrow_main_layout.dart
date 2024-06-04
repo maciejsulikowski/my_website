@@ -3,25 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
-import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_wide.dart';
-import 'package:my_website/app/features/widgets/about_me/about_app_widget_wide.dart';
-import 'package:my_website/app/features/widgets/about_me/wide_personal_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_narrow.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_ultra_narrow.dart';
+import 'package:my_website/app/features/widgets/about_me/narrow_personal_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/ultra_narrow_personal_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
-import 'package:my_website/app/features/widgets/contact/contact_widget_wide.dart';
+import 'package:my_website/app/features/widgets/contact/contact_widget_narrow.dart';
 
 import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
 import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
 import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
+import 'package:my_website/app/features/widgets/navigation/narrow_navigaton_bar.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
 import 'package:my_website/app/features/widgets/about_me/personal_widget.dart';
 import 'package:my_website/app/features/widgets/portfolio/portfolio_widget.dart';
-import 'package:my_website/app/features/widgets/portfolio/portfolio_widget_wide.dart';
+import 'package:my_website/app/features/widgets/portfolio/portfolio_widget_narrow.dart';
+import 'package:my_website/app/features/widgets/portfolio/portfolio_widget_ultra_narrow.dart';
 import 'package:my_website/app/features/widgets/side_bar.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class WideMainLayout extends StatefulWidget {
-  const WideMainLayout({
+class UltraNarrowMainLayout extends StatefulWidget {
+  const UltraNarrowMainLayout({
     super.key,
     required this.setLocale,
     required this.sectionKeys,
@@ -33,13 +37,31 @@ class WideMainLayout extends StatefulWidget {
   final List<GlobalKey> sectionKeys;
 
   @override
-  State<WideMainLayout> createState() => _WideMainLayoutState();
+  State<UltraNarrowMainLayout> createState() => _UltraNarrowMainLayoutState();
 }
 
-class _WideMainLayoutState extends State<WideMainLayout> {
+class _UltraNarrowMainLayoutState extends State<UltraNarrowMainLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black87,
+        iconTheme: const IconThemeData(color: Colors.white),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+                icon: const Icon(Icons.list_rounded));
+          },
+        ),
+      ),
+      drawer: Drawer(
+        child: NarrowNavigatorBar(
+            listOfKeys: widget.sectionKeys,
+            scrollController: widget._scrollController),
+      ),
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -93,7 +115,7 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                     key: widget.sectionKeys[0],
                     height: 50,
                   ),
-                  WidePersonalWidget(
+                  UltraNarrowPersonalWidget(
                       listOfKeys: widget.sectionKeys,
                       scrollController: widget._scrollController),
                   const SizedBox(
@@ -104,16 +126,16 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                     key: widget.sectionKeys[1],
                   ),
                   const SizedBox(height: 50),
-                  const AboutAppWidgetWide(),
+                  const AboutAppWidgetNarrowUltra(),
                   const SizedBox(height: 50),
-                  const AboutAppWidgetSecondWide(),
+                  const AboutAppWidgetSecondNarrow(),
                   const SizedBox(height: 50),
                   SideBar(
                     text: AppLocalizations.of(context)!.portfolio,
                     key: widget.sectionKeys[2],
                   ),
                   const SizedBox(height: 50),
-                  PortfolioWidgetWide(),
+                  PortfolioWidgetUltraNarrow(),
                   const SizedBox(
                     height: 50,
                   ),
@@ -124,21 +146,13 @@ class _WideMainLayoutState extends State<WideMainLayout> {
                   const SizedBox(
                     height: 50,
                   ),
-                  const ContactWidgetWide(),
+                  const ContactWidgetNarrow(),
                   const SizedBox(
                     height: 50,
                   ),
                   const FooterWidget(),
                 ],
               ),
-            ),
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 0,
-              child: NavigatorBar(
-                  listOfKeys: widget.sectionKeys,
-                  scrollController: widget._scrollController),
             ),
           ],
         ),
