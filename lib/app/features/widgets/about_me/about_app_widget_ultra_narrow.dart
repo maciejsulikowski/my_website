@@ -53,7 +53,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
           children: [
             Container(
                 padding: const EdgeInsets.all(20),
-                height: 550,
+                height: 510,
                 width: 450,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(

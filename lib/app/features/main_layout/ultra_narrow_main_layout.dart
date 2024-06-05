@@ -11,6 +11,7 @@ import 'package:my_website/app/features/widgets/about_me/narrow_personal_widget.
 import 'package:my_website/app/features/widgets/about_me/ultra_narrow_personal_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget.dart';
 import 'package:my_website/app/features/widgets/contact/contact_widget_narrow.dart';
+import 'package:my_website/app/features/widgets/contact/contact_widget_ultra_narrow.dart';
 
 import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
 import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
@@ -146,7 +147,7 @@ class _UltraNarrowMainLayoutState extends State<UltraNarrowMainLayout> {
                   const SizedBox(
                     height: 50,
                   ),
-                  const ContactWidgetNarrow(),
+                  const ContactWidgetUltraNarrow(),
                   const SizedBox(
                     height: 50,
                   ),
