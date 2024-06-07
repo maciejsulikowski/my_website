@@ -49,6 +49,135 @@ class FooterWidget extends StatelessWidget {
   }
 }
 
+class GitHubNarrowButton extends StatefulWidget {
+  GitHubNarrowButton({
+    super.key,
+  });
+
+  @override
+  State<GitHubNarrowButton> createState() => _GitHubNarrowButtonState();
+}
+
+class _GitHubNarrowButtonState extends State<GitHubNarrowButton> {
+  final webSiteUri = Uri.parse('https://github.com/maciejsulikowski');
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: Image(
+        image: const AssetImage(
+          'images/github.png',
+        ),
+        color: isHovered ? Colors.black.withOpacity(0.5) : null,
+        width: 30,
+        height: 30,
+      ),
+    );
+  }
+}
+
+class InstagramNarrowButton extends StatefulWidget {
+  InstagramNarrowButton({
+    super.key,
+  });
+
+  @override
+  State<InstagramNarrowButton> createState() => _InstagramNarrowButtonState();
+}
+
+class _InstagramNarrowButtonState extends State<InstagramNarrowButton> {
+  final webSiteUri = Uri.parse('https://www.instagram.com/suleymani_99/');
+
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: Image(
+        image: const AssetImage(
+          'images/insta.png',
+        ),
+        color: isHovered ? Colors.pink.withOpacity(0.5) : null,
+        width: 30,
+        height: 30,
+      ),
+    );
+  }
+}
+
+class FacebookNarrowButton extends StatefulWidget {
+  FacebookNarrowButton({
+    super.key,
+  });
+
+  @override
+  State<FacebookNarrowButton> createState() => _FacebookNarrowButtonState();
+}
+
+class _FacebookNarrowButtonState extends State<FacebookNarrowButton> {
+  final webSiteUri =
+      Uri.parse('https://www.facebook.com/maciek.sulikowski.58/');
+
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: Image(
+        image: const AssetImage(
+          'images/ffb.png',
+        ),
+        color: isHovered ? Colors.blue.withOpacity(0.5) : null,
+        width: 30,
+        height: 30,
+      ),
+    );
+  }
+}
+
+class LinekdInNarrowButton extends StatefulWidget {
+  LinekdInNarrowButton({
+    super.key,
+  });
+
+  @override
+  State<LinekdInNarrowButton> createState() => _LinekdInNarrowButtonState();
+}
+
+class _LinekdInNarrowButtonState extends State<LinekdInNarrowButton> {
+  final webSiteUri =
+      Uri.parse('https://www.linkedin.com/in/maciej-sulikowski-703542286/');
+
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        launcher.launchUrl(webSiteUri);
+      },
+      child: Image(
+        image: const AssetImage(
+          'images/linki.png',
+        ),
+        color: isHovered ? Colors.blue.withOpacity(0.5) : null,
+        width: 30,
+        height: 30,
+      ),
+    );
+  }
+}
+
 class GitHubButton extends StatefulWidget {
   GitHubButton({
     super.key,
