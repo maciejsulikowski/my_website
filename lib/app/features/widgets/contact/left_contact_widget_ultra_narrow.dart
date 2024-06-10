@@ -19,8 +19,8 @@ class LeftContactWidgetUltraNarrow extends StatefulWidget {
       _LeftContactWidgetNarroUltrawState();
 }
 
-class _LeftContactWidgetNarroUltrawState extends State<LeftContactWidgetUltraNarrow>
-    with TickerProviderStateMixin {
+class _LeftContactWidgetNarroUltrawState
+    extends State<LeftContactWidgetUltraNarrow> with TickerProviderStateMixin {
   late final AnimationController _leftAnimationController = AnimationController(
     duration: const Duration(milliseconds: 500),
     vsync: this,
@@ -51,7 +51,7 @@ class _LeftContactWidgetNarroUltrawState extends State<LeftContactWidgetUltraNar
             position: _leftAnimation,
             child: Container(
               height: 250,
-              width: 350,
+              width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
                 gradient: const LinearGradient(
@@ -79,13 +79,13 @@ class _LeftContactWidgetNarroUltrawState extends State<LeftContactWidgetUltraNar
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                                fontSize: 16,
                               )),
                           const SizedBox(height: 10),
                           Text('+48 793-744-201',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
-                                fontSize: 12,
+                                fontSize: 10,
                               )),
                         ],
                       ),
@@ -106,13 +106,13 @@ class _LeftContactWidgetNarroUltrawState extends State<LeftContactWidgetUltraNar
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                                fontSize: 16,
                               )),
                           const SizedBox(height: 10),
                           Text('${AppLocalizations.of(context)!.form_text}➡️',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
-                                fontSize: 12,
+                                fontSize: 10,
                               )),
                         ],
                       ),
@@ -133,13 +133,13 @@ class _LeftContactWidgetNarroUltrawState extends State<LeftContactWidgetUltraNar
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 20,
+                                fontSize: 16,
                               )),
                           const SizedBox(height: 10),
                           Text('maciejsulikowski99@gmail.com',
                               style: GoogleFonts.aBeeZee(
                                 color: Colors.white,
-                                fontSize: 12,
+                                fontSize: 10,
                               )),
                         ],
                       ),

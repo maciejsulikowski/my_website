@@ -3,14 +3,16 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_container.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_container_narrow.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_container_ultra_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/about_me_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/advantage_widget.dart';
+import 'package:my_website/app/features/widgets/about_me/advantage_widget_ultra_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/advantage_widget_wide.dart';
 import 'package:my_website/app/features/widgets/portfolio/app_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class AboutAppWidgetSecondNarrow extends StatelessWidget {
-  const AboutAppWidgetSecondNarrow({
+class AboutAppWidgetSecondNarrowUltra extends StatelessWidget {
+  const AboutAppWidgetSecondNarrowUltra({
     super.key,
   });
 
@@ -22,7 +24,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
         Container(
             padding: const EdgeInsets.all(20),
             height: 100,
-            width: 1000,
+            width: 500,
             child: Text(
               AppLocalizations.of(context)!.why,
               style: GoogleFonts.aBeeZee(
@@ -35,7 +37,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AdvantageWidget(
+            AdvantageWidgetUltraNarrow(
               text: AppLocalizations.of(context)!.mobile,
               image: 'images/mobile.png',
               secondText: AppLocalizations.of(context)!.flutter_mobile,
@@ -43,7 +45,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            AdvantageWidget(
+            AdvantageWidgetUltraNarrow(
               text: AppLocalizations.of(context)!.web,
               image: 'images/web.png',
               secondText: AppLocalizations.of(context)!.flutter_web,
@@ -51,7 +53,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            AdvantageWidget(
+            AdvantageWidgetUltraNarrow(
               text: AppLocalizations.of(context)!.ux,
               image: 'images/ux.png',
               secondText: AppLocalizations.of(context)!.flutter_ux,
@@ -68,7 +70,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 100),
-        const AboutAppSecondWidgetContainerNarrow(),
+        const AboutAppSecondWidgetContainerUltraNarrow(),
       ],
     );
   }

@@ -6,6 +6,7 @@ import 'package:my_website/app/features/widgets/contact/left_contact_wide.dart';
 import 'package:my_website/app/features/widgets/contact/left_contact_widget.dart';
 import 'package:http/http.dart' as http;
 import 'package:my_website/app/features/widgets/contact/left_contact_widget_narrow.dart';
+import 'package:my_website/app/features/widgets/contact/left_contact_widget_ultra_narrow.dart';
 import 'package:my_website/app/features/widgets/text_fields/email_widget.dart';
 import 'package:my_website/app/features/widgets/text_fields/email_widget_narrow.dart';
 import 'package:my_website/app/features/widgets/text_fields/message_widget.dart';
@@ -161,7 +162,7 @@ class _ContactWidgetUltraNarrowState extends State<ContactWidgetUltraNarrow>
         const SizedBox(
           height: 5,
         ),
-        const LeftContactWidgetNarrow(),
+        const LeftContactWidgetUltraNarrow(),
         const SizedBox(
           height: 10,
         ),
@@ -183,7 +184,7 @@ class _ContactWidgetUltraNarrowState extends State<ContactWidgetUltraNarrow>
                   AppLocalizations.of(context)!.questions,
                   style: GoogleFonts.aBeeZee(
                     color: Colors.black,
-                    fontSize: 20,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
@@ -211,7 +212,7 @@ class _ContactWidgetUltraNarrowState extends State<ContactWidgetUltraNarrow>
                 position: _rightAnimation,
                 child: Container(
                   height: 300,
-                  width: 350,
+                  width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     gradient: const LinearGradient(

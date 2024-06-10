@@ -61,7 +61,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
         opacity: _animation,
         child: Container(
             padding: const EdgeInsets.all(20),
-            height: 500,
+            height: 400,
             width: 450,
             decoration: BoxDecoration(
                 gradient: const LinearGradient(
@@ -89,7 +89,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                       child: Text(
                         '-${AppLocalizations.of(context)!.help_1}',
                         style: GoogleFonts.aBeeZee(
-                          fontSize: 24,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -114,7 +114,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                         '-${AppLocalizations.of(context)!.help_2}',
                         style: GoogleFonts.aBeeZee(
                             color: Colors.black,
-                            fontSize: 24,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -138,7 +138,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                         '-${AppLocalizations.of(context)!.help_3}',
                         style: GoogleFonts.aBeeZee(
                           color: Colors.black,
-                          fontSize: 24,
+                          fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -163,7 +163,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                         '-${AppLocalizations.of(context)!.help_4}',
                         style: GoogleFonts.aBeeZee(
                             color: Colors.black,
-                            fontSize: 24,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
                     ),

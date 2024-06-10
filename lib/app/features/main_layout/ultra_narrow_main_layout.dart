@@ -6,6 +6,7 @@ import 'package:my_website/app/features/widgets/about_me/about_app_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_narrow.dart';
+import 'package:my_website/app/features/widgets/about_me/about_app_widget_second_ultra_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/about_app_widget_ultra_narrow.dart';
 import 'package:my_website/app/features/widgets/about_me/narrow_personal_widget.dart';
 import 'package:my_website/app/features/widgets/about_me/ultra_narrow_personal_widget.dart';
@@ -129,7 +130,7 @@ class _UltraNarrowMainLayoutState extends State<UltraNarrowMainLayout> {
                   const SizedBox(height: 50),
                   const AboutAppWidgetNarrowUltra(),
                   const SizedBox(height: 50),
-                  const AboutAppWidgetSecondNarrow(),
+                  const AboutAppWidgetSecondNarrowUltra(),
                   const SizedBox(height: 50),
                   SideBar(
                     text: AppLocalizations.of(context)!.portfolio,

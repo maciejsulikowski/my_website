@@ -65,19 +65,21 @@ class PortfolioWidgetUltraNarrow extends StatelessWidget {
         const SizedBox(height: 50),
         SizedBox(
             width: double.infinity,
-            height: 100,
-            child: Row(
+            height: 200,
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    AppLocalizations.of(context)!.github_projects,
-                    style: GoogleFonts.aBeeZee(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
+                  child: Expanded(
+                    child: Text(
+                      AppLocalizations.of(context)!.github_projects,
+                      style: GoogleFonts.aBeeZee(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
                 const SizedBox(
