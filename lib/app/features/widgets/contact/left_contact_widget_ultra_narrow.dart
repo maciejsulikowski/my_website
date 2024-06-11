@@ -50,7 +50,7 @@ class _LeftContactWidgetNarroUltrawState
           return SlideTransition(
             position: _leftAnimation,
             child: Container(
-              height: 250,
+              height: 200,
               width: 300,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),

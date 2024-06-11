@@ -211,7 +211,7 @@ class _ContactWidgetUltraNarrowState extends State<ContactWidgetUltraNarrow>
               return SlideTransition(
                 position: _rightAnimation,
                 child: Container(
-                  height: 300,
+                  height: 280,
                   width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),

@@ -146,7 +146,7 @@ class _UltraNarrowMainLayoutState extends State<UltraNarrowMainLayout> {
                     key: widget.sectionKeys[3],
                   ),
                   const SizedBox(
-                    height: 50,
+                    height: 20,
                   ),
                   const ContactWidgetUltraNarrow(),
                   const SizedBox(

@@ -31,43 +31,24 @@ class _AppWidgetUltraNarrowState extends State<AppWidgetUltraNarrow> {
       onTap: () {
         launcher.launchUrl(widget.link);
       },
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 500),
-        decoration: isHovered
-            ? BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(53, 53, 53, 1),
-                    Color.fromRGBO(41, 41, 41, 1),
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-                boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      spreadRadius: 4,
-                      blurRadius: 10,
-                      offset: const Offset(0, 3),
-                    )
-                  ])
-            : BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(255, 255, 255, 1),
-                    Color.fromRGBO(246, 246, 246, 1),
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-                boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
-                      spreadRadius: 4,
-                      blurRadius: 10,
-                      offset: const Offset(0, 3),
-                    )
-                  ]),
+      child: Container(
+        decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              colors: [
+                Color.fromRGBO(255, 255, 255, 1),
+                Color.fromRGBO(246, 246, 246, 1),
+              ],
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.1),
+                spreadRadius: 4,
+                blurRadius: 10,
+                offset: const Offset(0, 3),
+              )
+            ]),
         height: 620,
         width: 350,
         child: Column(
