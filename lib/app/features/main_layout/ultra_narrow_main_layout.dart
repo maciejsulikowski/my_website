@@ -16,6 +16,7 @@ import 'package:my_website/app/features/widgets/contact/contact_widget_ultra_nar
 
 import 'package:my_website/app/features/widgets/floating_action_buttons/second_language_action_button.dart';
 import 'package:my_website/app/features/widgets/floating_action_buttons/up_arrow_floating_action_button.dart';
+import 'package:my_website/app/features/widgets/footer/footer_ultra_narrow_widget.dart';
 import 'package:my_website/app/features/widgets/footer/footer_widget.dart';
 import 'package:my_website/app/features/widgets/navigation/narrow_navigaton_bar.dart';
 import 'package:my_website/app/features/widgets/navigation/navigation_bar.dart';
@@ -152,7 +153,7 @@ class _UltraNarrowMainLayoutState extends State<UltraNarrowMainLayout> {
                   const SizedBox(
                     height: 50,
                   ),
-                  const FooterWidget(),
+                  const FooterUltraNarrowWidget(),
                 ],
               ),
             ),

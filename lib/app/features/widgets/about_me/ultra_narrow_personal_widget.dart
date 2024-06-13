@@ -27,6 +27,7 @@ class _UltraNarrowPersonalWidgetState extends State<UltraNarrowPersonalWidget>
   bool isHoveredSecond = false;
   late AnimationController animationController;
   late Animation<double> animation;
+
   @override
   void initState() {
     super.initState();
@@ -74,7 +75,7 @@ class _UltraNarrowPersonalWidgetState extends State<UltraNarrowPersonalWidget>
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: 350,
+          height: 400,
           width: 500,
           child: Padding(
             padding: const EdgeInsets.only(top: 100.0, left: 20, right: 20),
@@ -196,7 +197,7 @@ class _UltraNarrowPersonalWidgetState extends State<UltraNarrowPersonalWidget>
                   ],
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Row(
                   children: [

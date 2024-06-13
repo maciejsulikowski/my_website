@@ -130,31 +130,6 @@ class _ContactWidgetUltraNarrowState extends State<ContactWidgetUltraNarrow>
     );
   }
 
-  late final AnimationController _animationController = AnimationController(
-    duration: const Duration(milliseconds: 500),
-    vsync: this,
-  );
-
-  late final Animation<Offset> _textAnimation = Tween<Offset>(
-    begin: const Offset(-1, 0),
-    end: Offset.zero,
-  ).animate(
-    CurvedAnimation(parent: _animationController, curve: Curves.easeIn),
-  );
-
-  late final AnimationController _rightAnimationController =
-      AnimationController(
-    duration: const Duration(milliseconds: 500),
-    vsync: this,
-  );
-
-  late final Animation<Offset> _rightAnimation = Tween<Offset>(
-    begin: const Offset(0.2, 0),
-    end: Offset.zero,
-  ).animate(
-    CurvedAnimation(parent: _rightAnimationController, curve: Curves.easeIn),
-  );
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -166,150 +141,112 @@ class _ContactWidgetUltraNarrowState extends State<ContactWidgetUltraNarrow>
         const SizedBox(
           height: 10,
         ),
-        VisibilityDetector(
-          key: const Key('contactWidgetUltraNarrow'),
-          onVisibilityChanged: (visibilityInfo) {
-            if (visibilityInfo.visibleFraction == 1) {
-              _animationController.forward();
-            } else {
-              _animationController.reverse();
-            }
-          },
-          child: AnimatedBuilder(
-            animation: _animationController,
-            builder: (context, child) {
-              return SlideTransition(
-                position: _textAnimation,
-                child: Text(
-                  AppLocalizations.of(context)!.questions,
-                  style: GoogleFonts.aBeeZee(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              );
-            },
+        Text(
+          AppLocalizations.of(context)!.questions,
+          style: GoogleFonts.aBeeZee(
+            color: Colors.black,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
           ),
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 10,
         ),
-        VisibilityDetector(
-          key: const Key('RightContactContainer'),
-          onVisibilityChanged: (visibilityInfo) {
-            if (visibilityInfo.visibleFraction == 1) {
-              _rightAnimationController.forward();
-            } else {
-              _rightAnimationController.reverse();
-            }
-          },
-          child: AnimatedBuilder(
-            animation: _rightAnimationController,
-            builder: (context, child) {
-              return SlideTransition(
-                position: _rightAnimation,
-                child: Container(
-                  height: 280,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: const LinearGradient(
-                      colors: [
-                        Color.fromRGBO(0, 0, 0, 1),
-                        Color.fromRGBO(0, 0, 0, 1),
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
+        Container(
+          height: 280,
+          width: 300,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            gradient: const LinearGradient(
+              colors: [
+                Color.fromRGBO(0, 0, 0, 1),
+                Color.fromRGBO(0, 0, 0, 1),
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  NameTextFieldNarrow(
+                    nameController: nameController,
                   ),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          NameTextFieldNarrow(
-                            nameController: nameController,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          SurnameTextFieldNarrow(
-                            surnameController: surnameController,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          EmailTextFieldNarrow(
-                            emailController: emailController,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          SubjectTextFieldNarrow(
-                            subjectController: subjectController,
-                          ),
-                        ],
-                      ),
-                      MessageTextFieldNarrow(
-                        messageController: messageController,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: MouseRegion(
-                          onEnter: (_) {
-                            setState(() {
-                              isHovered = true;
-                            });
-                          },
-                          onExit: (_) {
-                            setState(() {
-                              isHovered = false;
-                            });
-                          },
-                          child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      isHovered ? Colors.grey : Colors.white),
-                              onPressed: () {
-                                if (emailController.text.isEmpty ||
-                                    messageController.text.isEmpty ||
-                                    subjectController.text.isEmpty ||
-                                    nameController.text.isEmpty ||
-                                    surnameController.text.isEmpty) {
-                                  wrongMessage();
-                                } else if (!emailController.text
-                                    .contains('@')) {
-                                  wrongMessage2();
-                                } else {
-                                  sendEmail();
-                                  correctMessage();
-                                  emailController.clear();
-                                  messageController.clear();
-                                  subjectController.clear();
-                                  nameController.clear();
-                                  surnameController.clear();
-                                }
-                              },
-                              child: Text(
-                                AppLocalizations.of(context)!.send_message,
-                                style: GoogleFonts.aBeeZee(
-                                    color:
-                                        isHovered ? Colors.white : Colors.black,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold),
-                              )),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                    ],
+                  const SizedBox(
+                    width: 10,
                   ),
+                  SurnameTextFieldNarrow(
+                    surnameController: surnameController,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  EmailTextFieldNarrow(
+                    emailController: emailController,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  SubjectTextFieldNarrow(
+                    subjectController: subjectController,
+                  ),
+                ],
+              ),
+              MessageTextFieldNarrow(
+                messageController: messageController,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHovered = true;
+                    });
+                  },
+                  onExit: (_) {
+                    setState(() {
+                      isHovered = false;
+                    });
+                  },
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              isHovered ? Colors.grey : Colors.white),
+                      onPressed: () {
+                        if (emailController.text.isEmpty ||
+                            messageController.text.isEmpty ||
+                            subjectController.text.isEmpty ||
+                            nameController.text.isEmpty ||
+                            surnameController.text.isEmpty) {
+                          wrongMessage();
+                        } else if (!emailController.text.contains('@')) {
+                          wrongMessage2();
+                        } else {
+                          sendEmail();
+                          correctMessage();
+                          emailController.clear();
+                          messageController.clear();
+                          subjectController.clear();
+                          nameController.clear();
+                          surnameController.clear();
+                        }
+                      },
+                      child: Text(
+                        AppLocalizations.of(context)!.send_message,
+                        style: GoogleFonts.aBeeZee(
+                            color: isHovered ? Colors.white : Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      )),
                 ),
-              );
-            },
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+            ],
           ),
         ),
       ],

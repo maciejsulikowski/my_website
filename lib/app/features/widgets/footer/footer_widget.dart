@@ -27,7 +27,7 @@ class FooterWidget extends StatelessWidget {
           const SizedBox(
             height: 50,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               GitHubButton(),
@@ -50,7 +50,7 @@ class FooterWidget extends StatelessWidget {
 }
 
 class GitHubNarrowButton extends StatefulWidget {
-  GitHubNarrowButton({
+  const GitHubNarrowButton({
     super.key,
   });
 
@@ -64,8 +64,8 @@ class _GitHubNarrowButtonState extends State<GitHubNarrowButton> {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
+    return InkWell(
+      onTap: () {
         launcher.launchUrl(webSiteUri);
       },
       child: Image(
@@ -73,15 +73,15 @@ class _GitHubNarrowButtonState extends State<GitHubNarrowButton> {
           'images/github.png',
         ),
         color: isHovered ? Colors.black.withOpacity(0.5) : null,
-        width: 30,
-        height: 30,
+        width: 50,
+        height: 50,
       ),
     );
   }
 }
 
 class InstagramNarrowButton extends StatefulWidget {
-  InstagramNarrowButton({
+  const InstagramNarrowButton({
     super.key,
   });
 
@@ -105,15 +105,15 @@ class _InstagramNarrowButtonState extends State<InstagramNarrowButton> {
           'images/insta.png',
         ),
         color: isHovered ? Colors.pink.withOpacity(0.5) : null,
-        width: 30,
-        height: 30,
+        width: 50,
+        height: 50,
       ),
     );
   }
 }
 
 class FacebookNarrowButton extends StatefulWidget {
-  FacebookNarrowButton({
+  const FacebookNarrowButton({
     super.key,
   });
 
@@ -138,15 +138,15 @@ class _FacebookNarrowButtonState extends State<FacebookNarrowButton> {
           'images/ffb.png',
         ),
         color: isHovered ? Colors.blue.withOpacity(0.5) : null,
-        width: 30,
-        height: 30,
+        width: 50,
+        height: 50,
       ),
     );
   }
 }
 
 class LinekdInNarrowButton extends StatefulWidget {
-  LinekdInNarrowButton({
+  const LinekdInNarrowButton({
     super.key,
   });
 
@@ -171,15 +171,15 @@ class _LinekdInNarrowButtonState extends State<LinekdInNarrowButton> {
           'images/linki.png',
         ),
         color: isHovered ? Colors.blue.withOpacity(0.5) : null,
-        width: 30,
-        height: 30,
+        width: 50,
+        height: 50,
       ),
     );
   }
 }
 
 class GitHubButton extends StatefulWidget {
-  GitHubButton({
+  const GitHubButton({
     super.key,
   });
 
@@ -222,7 +222,7 @@ class _GitHubButtonState extends State<GitHubButton> {
 }
 
 class InstagramButton extends StatefulWidget {
-  InstagramButton({
+  const InstagramButton({
     super.key,
   });
 
@@ -266,7 +266,7 @@ class _InstagramButtonState extends State<InstagramButton> {
 }
 
 class FacebookButton extends StatefulWidget {
-  FacebookButton({
+  const FacebookButton({
     super.key,
   });
 
@@ -311,7 +311,7 @@ class _FacebookButtonState extends State<FacebookButton> {
 }
 
 class LinekdInButton extends StatefulWidget {
-  LinekdInButton({
+  const LinekdInButton({
     super.key,
   });
 

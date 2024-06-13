@@ -98,7 +98,7 @@ class _NarrowNavigatorBarState extends State<NarrowNavigatorBar> {
             onExit: (event) => onEntered(1, false),
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 500),
-              constraints: BoxConstraints(maxWidth: 200),
+              constraints: const BoxConstraints(maxWidth: 200),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: isSelected1 ? Colors.black : Colors.white,
