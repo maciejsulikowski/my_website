@@ -222,7 +222,7 @@ class _PersonalWidgetState extends State<PersonalWidget>
                 const SizedBox(
                   height: 25,
                 ),
-                Row(
+                const Row(
                   children: [
                     GitHubButton(),
                     SizedBox(
@@ -251,9 +251,9 @@ class _PersonalWidgetState extends State<PersonalWidget>
           child: ScaleTransition(
             scale: animation,
             child: const Image(
-              image: AssetImage('images/maj.png'),
-              width: 500,
-              height: 500,
+              image: AssetImage('images/maciejboss.png'),
+              width: 600,
+              height: 600,
             ),
           ),
         ),

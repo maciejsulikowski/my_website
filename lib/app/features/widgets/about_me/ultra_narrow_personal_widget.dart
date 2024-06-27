@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:lottie/lottie.dart';
@@ -84,15 +86,18 @@ class _UltraNarrowPersonalWidgetState extends State<UltraNarrowPersonalWidget>
               children: [
                 Row(
                   children: [
-                    Text(
-                      AppLocalizations.of(context)!.hi_there,
-                      style: GoogleFonts.aBeeZee(
-                          color: Colors.black, fontSize: 16),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        AppLocalizations.of(context)!.hi_there,
+                        style: GoogleFonts.aBeeZee(
+                            color: Colors.black, fontSize: 12),
+                      ),
                     ),
                     Container(
                       margin: const EdgeInsets.symmetric(horizontal: 20),
-                      width: 40,
-                      height: 40,
+                      width: 30,
+                      height: 30,
                       child: Lottie.asset('images/heyAnimation.json'),
                     ),
                   ],
