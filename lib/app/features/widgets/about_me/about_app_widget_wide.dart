@@ -46,13 +46,26 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
       },
       child: FadeTransition(
         opacity: _animation,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 400,
+              width: 450,
+              child: ScaleTransition(
+                scale: _animation,
+                child: const Image(
+                  image: AssetImage('images/smilemaciej.jpg'),
+                  // width: 500,
+                  // height: 500,
+                ),
+              ),
+            ),
+            const SizedBox(width: 30),
             Container(
                 padding: const EdgeInsets.all(20),
-                height: 250,
-                width: 900,
+                height: 400,
+                width: 400,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
@@ -75,11 +88,13 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
                   children: [
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student}',
-                          style: GoogleFonts.aBeeZee(
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student}',
+                            style: GoogleFonts.aBeeZee(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -89,14 +104,17 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_1}',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold),
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_1}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 40,
@@ -106,14 +124,17 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_2}',
-                          style: GoogleFonts.aBeeZee(
-                            color: Colors.black,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_2}',
+                            style: GoogleFonts.aBeeZee(
+                              color: Colors.black,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                         const SizedBox(
@@ -123,14 +144,17 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_3}',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold),
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_3}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 40,
@@ -139,14 +163,17 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
                         ),
                       ],
                     ),
+                    const SizedBox(height: 10),
                     Row(
                       children: [
-                        Text(
-                          '-${AppLocalizations.of(context)!.i_am_student_4}',
-                          style: GoogleFonts.aBeeZee(
-                              color: Colors.black,
-                              fontSize: 22,
-                              fontWeight: FontWeight.bold),
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.i_am_student_4}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                         const SizedBox(
                           width: 40,
@@ -158,7 +185,6 @@ class _AboutAppWidgetWideState extends State<AboutAppWidgetWide>
                     ),
                   ],
                 )),
-            const SizedBox(height: 50),
           ],
         ),
       ),

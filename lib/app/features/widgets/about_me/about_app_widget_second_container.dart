@@ -56,109 +56,144 @@ class _AboutAppSecondWidgetContainerState
       },
       child: FadeTransition(
         opacity: _animation,
-        child: Container(
-            padding: const EdgeInsets.all(20),
-            height: 200,
-            width: 850,
-            decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(255, 255, 255, 1),
-                    Color.fromRGBO(246, 246, 246, 1),
-                  ],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
-                    spreadRadius: 4,
-                    blurRadius: 10,
-                    offset: const Offset(0, 3),
-                  )
-                ]),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+                padding: const EdgeInsets.all(20),
+                height: 350,
+                width: 500,
+                decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      colors: [
+                        Color.fromRGBO(255, 255, 255, 1),
+                        Color.fromRGBO(246, 246, 246, 1),
+                      ],
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.1),
+                        spreadRadius: 4,
+                        blurRadius: 10,
+                        offset: const Offset(0, 3),
+                      )
+                    ]),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_1}',
-                      style: GoogleFonts.aBeeZee(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.help_1}',
+                            style: GoogleFonts.aBeeZee(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: Image(image: AssetImage('images/rocket.png')),
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      width: 10,
+                      height: 15,
+                    ),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.help_2}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: Image(image: AssetImage('images/poke.png')),
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: Image(image: AssetImage('images/rocket.png')),
+                      height: 15,
+                    ),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.help_3}',
+                            style: GoogleFonts.aBeeZee(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: Image(image: AssetImage('images/weeb.png')),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      children: [
+                        Flexible(
+                          child: Text(
+                            '-${AppLocalizations.of(context)!.help_4}',
+                            style: GoogleFonts.aBeeZee(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        const SizedBox(
+                          width: 40,
+                          height: 40,
+                          child: Image(image: AssetImage('images/email.png')),
+                        ),
+                      ],
                     ),
                   ],
+                )),
+            const SizedBox(width: 50),
+            SizedBox(
+              height: 350,
+              width: 350,
+              child: ScaleTransition(
+                scale: _animation,
+                child: const Image(
+                  image: AssetImage('images/cesar.png'),
+                  width: 500,
+                  height: 400,
                 ),
-                Row(
-                  children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_2}',
-                      style: GoogleFonts.aBeeZee(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: Image(image: AssetImage('images/poke.png')),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_3}',
-                      style: GoogleFonts.aBeeZee(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: Image(image: AssetImage('images/weeb.png')),
-                    ),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      '-${AppLocalizations.of(context)!.help_4}',
-                      style: GoogleFonts.aBeeZee(
-                          color: Colors.black,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    const SizedBox(
-                      width: 40,
-                      height: 40,
-                      child: Image(image: AssetImage('images/email.png')),
-                    ),
-                  ],
-                ),
-              ],
-            )),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
