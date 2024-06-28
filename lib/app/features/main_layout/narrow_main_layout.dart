@@ -127,6 +127,15 @@ class _NarrowMainLayoutState extends State<NarrowMainLayout> {
                   const SizedBox(height: 50),
                   const AboutAppWidgetSecondNarrow(),
                   const SizedBox(height: 50),
+                  Container(
+                    margin: const EdgeInsets.only(top: 50),
+                    height: 350,
+                    width: 400,
+                    child: const Image(
+                      image: AssetImage('images/cesar.png'),
+                    ),
+                  ),
+                  const SizedBox(height: 50),
                   SideBar(
                     text: AppLocalizations.of(context)!.portfolio,
                     key: widget.sectionKeys[2],

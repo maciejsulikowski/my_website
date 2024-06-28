@@ -89,7 +89,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                       child: Text(
                         '-${AppLocalizations.of(context)!.help_1}',
                         style: GoogleFonts.aBeeZee(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -114,7 +114,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                         '-${AppLocalizations.of(context)!.help_2}',
                         style: GoogleFonts.aBeeZee(
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -138,7 +138,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                         '-${AppLocalizations.of(context)!.help_3}',
                         style: GoogleFonts.aBeeZee(
                           color: Colors.black,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -163,7 +163,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
                         '-${AppLocalizations.of(context)!.help_4}',
                         style: GoogleFonts.aBeeZee(
                             color: Colors.black,
-                            fontSize: 18,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
                     ),

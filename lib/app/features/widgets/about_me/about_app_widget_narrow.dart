@@ -21,8 +21,6 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
   late final AnimationController _animationController = AnimationController(
       duration: const Duration(milliseconds: 500), vsync: this);
 
-  double pixels = 0.0;
-
   late final Animation<double> _animation = CurvedAnimation(
     parent: _animationController,
     curve: Curves.easeIn,
@@ -53,7 +51,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
             Container(
                 padding: const EdgeInsets.all(20),
                 height: 450,
-                width: 700,
+                width: 400,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
@@ -80,7 +78,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                           child: Text(
                             '-${AppLocalizations.of(context)!.i_am_student}',
                             style: GoogleFonts.aBeeZee(
-                              fontSize: 22,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -102,7 +100,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                             '-${AppLocalizations.of(context)!.i_am_student_1}',
                             style: GoogleFonts.aBeeZee(
                                 color: Colors.black,
-                                fontSize: 22,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -124,7 +122,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                             '-${AppLocalizations.of(context)!.i_am_student_2}',
                             style: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 22,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -146,7 +144,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                             '-${AppLocalizations.of(context)!.i_am_student_3}',
                             style: GoogleFonts.aBeeZee(
                                 color: Colors.black,
-                                fontSize: 22,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -167,7 +165,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                             '-${AppLocalizations.of(context)!.i_am_student_4}',
                             style: GoogleFonts.aBeeZee(
                                 color: Colors.black,
-                                fontSize: 22,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -181,7 +179,7 @@ class _AboutAppWidgetNarrowState extends State<AboutAppWidgetNarrow>
                     ),
                   ],
                 )),
-            const SizedBox(height: 50),
+            const SizedBox(width: 50),
           ],
         ),
       ),

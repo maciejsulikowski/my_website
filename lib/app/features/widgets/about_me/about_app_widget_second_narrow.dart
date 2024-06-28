@@ -21,6 +21,17 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
+          padding: const EdgeInsets.only(bottom: 100),
+          height: 400,
+          width: 400,
+          child: const Image(
+            image: AssetImage('images/smilemaciej.jpg'),
+          ),
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+        Container(
             padding: const EdgeInsets.all(20),
             height: 100,
             width: 1000,
@@ -41,7 +52,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
               image: 'images/mobile.png',
               secondText: AppLocalizations.of(context)!.flutter_mobile,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             AdvantageWidget(
@@ -49,7 +60,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
               image: 'images/web.png',
               secondText: AppLocalizations.of(context)!.flutter_web,
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             AdvantageWidget(
@@ -69,7 +80,7 @@ class AboutAppWidgetSecondNarrow extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: 100),
-        const AboutAppSecondWidgetContainerUltraNarrow(),
+        const AboutAppSecondWidgetContainerNarrow(),
       ],
     );
   }
