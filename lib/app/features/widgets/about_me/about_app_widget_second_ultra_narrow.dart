@@ -22,6 +22,14 @@ class AboutAppWidgetSecondNarrowUltra extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
+          padding: const EdgeInsets.only(bottom: 100),
+          height: 400,
+          width: 350,
+          child: const Image(
+            image: AssetImage('images/smilemaciej.jpg'),
+          ),
+        ),
+        Container(
             padding: const EdgeInsets.all(20),
             height: 100,
             width: 500,

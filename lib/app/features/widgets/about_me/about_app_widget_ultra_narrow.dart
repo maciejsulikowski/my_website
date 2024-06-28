@@ -54,7 +54,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
             Container(
                 padding: const EdgeInsets.all(20),
                 height: 450,
-                width: 450,
+                width: 350,
                 decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [
@@ -81,7 +81,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
                           child: Text(
                             '-${AppLocalizations.of(context)!.i_am_student}',
                             style: GoogleFonts.aBeeZee(
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -103,7 +103,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
                             '-${AppLocalizations.of(context)!.i_am_student_1}',
                             style: GoogleFonts.aBeeZee(
                                 color: Colors.black,
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -125,7 +125,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
                             '-${AppLocalizations.of(context)!.i_am_student_2}',
                             style: GoogleFonts.aBeeZee(
                               color: Colors.black,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -147,7 +147,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
                             '-${AppLocalizations.of(context)!.i_am_student_3}',
                             style: GoogleFonts.aBeeZee(
                                 color: Colors.black,
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
@@ -168,7 +168,7 @@ class _AboutAppWidgetNarrowStateUltra extends State<AboutAppWidgetNarrowUltra>
                             '-${AppLocalizations.of(context)!.i_am_student_4}',
                             style: GoogleFonts.aBeeZee(
                                 color: Colors.black,
-                                fontSize: 18,
+                                fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
                         ),

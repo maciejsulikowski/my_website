@@ -133,6 +133,15 @@ class _UltraNarrowMainLayoutState extends State<UltraNarrowMainLayout> {
                   const SizedBox(height: 50),
                   const AboutAppWidgetSecondNarrowUltra(),
                   const SizedBox(height: 50),
+                  Container(
+                    margin: const EdgeInsets.only(top: 50),
+                    height: 300,
+                    width: 300,
+                    child: const Image(
+                      image: AssetImage('images/cesar.png'),
+                    ),
+                  ),
+                  const SizedBox(height: 50),
                   SideBar(
                     text: AppLocalizations.of(context)!.portfolio,
                     key: widget.sectionKeys[2],

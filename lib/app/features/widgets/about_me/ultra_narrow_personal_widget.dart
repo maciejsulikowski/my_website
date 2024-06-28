@@ -204,18 +204,18 @@ class _UltraNarrowPersonalWidgetState extends State<UltraNarrowPersonalWidget>
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
+                const Row(
                   children: [
                     GitHubNarrowButton(),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
                     InstagramNarrowButton(),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
                     FacebookNarrowButton(),
-                    const SizedBox(
+                    SizedBox(
                       width: 20,
                     ),
                     LinekdInNarrowButton(),
@@ -226,13 +226,13 @@ class _UltraNarrowPersonalWidgetState extends State<UltraNarrowPersonalWidget>
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(top: 50),
+          padding: const EdgeInsets.only(bottom: 100),
           height: 500,
           width: 400,
           child: ScaleTransition(
             scale: animation,
             child: const Image(
-              image: AssetImage('images/maj.png'),
+              image: AssetImage('images/maciejboss.png'),
               width: 80,
               height: 80,
             ),

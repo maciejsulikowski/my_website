@@ -62,7 +62,7 @@ class _AboutAppSecondWidgetContainerNarroUltrawState
         child: Container(
             padding: const EdgeInsets.all(20),
             height: 400,
-            width: 450,
+            width: 350,
             decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [
